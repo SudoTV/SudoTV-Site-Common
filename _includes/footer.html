@@ -1,0 +1,211 @@
+<footer class="site-footer h-card">
+    <data class="u-url" href="{{ " /" | relative_url }}"></data>
+    <div class="wrapper">
+        <div class="footer-col-wrapper">
+            <div class="footer-col open-source-footer">
+                {% if site.github.private != true and site.github.license %}
+                <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+                    {% if page.localization == "en-US" %}
+                    This site is open source. {% github_edit_link "Improve this page" %}.
+                    {% elsif page.localization == "zh-CN" %}
+                    本站渲染自开源项目，{% github_edit_link "帮助本页面变得更好" %}。
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="center-footer"></div>
+            <div class="footer-col language-footer">
+                <div class="language-footer-icon">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                </div>
+                <select title="Language-Select" id="language-select" class="language-select">
+                    <option value="zh-CN">简体中文</option>
+                    <option value="en-US">English</option>
+                </select>
+            </div>
+        </div>
+        <div class="links-footer">
+            <ul class="links-footer-ul">
+
+            </ul>
+        </div>
+        <div class="links-footer">
+            <ul class="links-footer-ul">
+                <li class="links-footer-li">
+                    <i class="fa fa-fw fa-map" aria-hidden="true"></i>
+                </li>
+                <li class="links-footer-li">
+                    <a data-origin="{{ site.application_name }}" href="https://sudo.tv/privacy">
+                        {% if page.localization == "en-US" %}
+                        Privacy
+                        {% elsif page.localization == "zh-CN" %}
+                        隐私权
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a data-origin="{{ site.application_name }}" href="https://sudo.tv/about">
+                        {% if page.localization == "en-US" %}
+                        About
+                        {% elsif page.localization == "zh-CN" %}
+                        关于
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a data-origin="{{ site.application_name }}" href="https://sudo.tv/frequently-asked-questions">
+                        {% if page.localization == "en-US" %}
+                        FAQ
+                        {% elsif page.localization == "zh-CN" %}
+                        常见问题
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a data-origin="{{ site.application_name }}" href="https://sudo.tv/interact">
+                        {% if page.localization == "en-US" %}
+                        Interact
+                        {% elsif page.localization == "zh-CN" %}
+                        互动
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a data-origin="{{ site.application_name }}" href="https://sudo.tv/contribute">
+                        {% if page.localization == "en-US" %}
+                        Contribute
+                        {% elsif page.localization == "zh-CN" %}
+                        贡献
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a data-origin="{{ site.application_name }}" href="https://sudo.tv/reprint">
+                        {% if page.localization == "en-US" %}
+                        Reprint
+                        {% elsif page.localization == "zh-CN" %}
+                        转载
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a data-origin="{{ site.application_name }}" href="https://sudo.tv/contact">
+                        {% if page.localization == "en-US" %}
+                        Contact Us
+                        {% elsif page.localization == "zh-CN" %}
+                        联系我们
+                        {% endif %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="links-footer">
+            <ul class="links-footer-ul">
+                <li class="links-footer-li">
+                    <i class="fa fa-fw fa-cubes" aria-hidden="true"></i>
+                </li>
+                <li class="links-footer-li">
+                    <a href="https://sudo.tv/">
+                        {% if page.localization == "en-US" %}
+                        SudoTV
+                        {% elsif page.localization == "zh-CN" %}
+                        SudoTV 主站
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a href="https://bear.sudo.tv/">
+                        {% if page.localization == "en-US" %}
+                        Bear
+                        {% elsif page.localization == "zh-CN" %}
+                        熊吉
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a href="https://docs.sudo.tv/">
+                        {% if page.localization == "en-US" %}
+                        Documents
+                        {% elsif page.localization == "zh-CN" %}
+                        文档
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a href="https://project.sudo.tv/">
+                        {% if page.localization == "en-US" %}
+                        Project
+                        {% elsif page.localization == "zh-CN" %}
+                        项目
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a href="https://resource.sudo.tv/">
+                        {% if page.localization == "en-US" %}
+                        Resource
+                        {% elsif page.localization == "zh-CN" %}
+                        资源
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a href="https://series.sudo.tv/">
+                        {% if page.localization == "en-US" %}
+                        Series
+                        {% elsif page.localization == "zh-CN" %}
+                        剧集
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a href="https://github.com/SudoTV/">
+                        {% if page.localization == "en-US" %}
+                        Main Github
+                        {% elsif page.localization == "zh-CN" %}
+                        主站 Github
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a href="https://github.com/SudoTVSeries/">
+                        {% if page.localization == "en-US" %}
+                        Series Github
+                        {% elsif page.localization == "zh-CN" %}
+                        剧集 Github
+                        {% endif %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="license-footer">
+            <div class="badge-footer">
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+                    <img alt="Creative Commons License" style="border-width:0"
+                        src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" />
+                </a>
+            </div>
+            <div class="license-footer-text">
+                {% if page.localization == "en-US" %}
+                Published Under a
+                {% elsif page.localization == "zh-CN" %}
+                基于
+                {% endif %}
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+                    {% if page.localization == "en-US" %}
+                    CC-BY-NC_ND 4.0 License
+                    {% elsif page.localization == "zh-CN" %}
+                    CC-BY-NC_ND 4.0 协议
+                    {% endif %}
+                </a>
+                {% if page.localization == "en-US" %}
+                © 2022 WMXPY
+                {% elsif page.localization == "zh-CN" %}
+                共享 © 2022 WMXPY
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/common/assets/js/language-footer.js"></script>
+<script src="/common/assets/js/redirect-footer.js"></script>

@@ -1,0 +1,17 @@
+{% if page.localization == "en-US" %}
+
+{% if include.language == "en-US" %}
+English (US)
+{% elsif include.language == "zh-CN" %}
+Simplified Chinese
+{% endif %}
+
+{% elsif page.localization == "zh-CN" %}
+
+{% if include.language == "en-US" %}
+英文 (美国)
+{% elsif include.language == "zh-CN" %}
+简体中文
+{% endif %}
+
+{% endif %}

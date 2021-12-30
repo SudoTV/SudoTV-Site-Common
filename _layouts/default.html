@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+{%- include head.html -%}
+
+<body>
+    <script src="/common/assets/js/language-common.js"></script>
+    <script>
+        const siteCommon = {
+            applicationName: "{{ site.application_name }}",
+        };
+    </script>
+    {%- include header.html -%}
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            {{ content }}
+        </div>
+    </main>
+    <button id="go-to-top-button" class="go-to-top-button" title="Go to top">
+        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </button>
+    <script src="/common/assets/js/code-blockquote.js"></script>
+    <script src="/common/assets/js/code-highlight.js"></script>
+    <script src="/common/assets/js/back-to-top.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+        integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>
+        anchors.add();
+    </script>
+    {%- include footer.html -%}
+</body>
+
+</html>

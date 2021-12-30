@@ -1,0 +1,26 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-title" content="{{ site.application_name }}">
+  <meta name="application-name" content="{{ site.application_name }}">
+
+  {%- seo -%}
+  <link rel="shortcut icon" href="/$/favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="/$/site.webmanifest" crossorigin="use-credentials">
+  <link rel="apple-touch-icon" href="/$/apple-touch-icon.png">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ "/assets/main.css?v=" | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet"
+    href="{{ "/common/assets/css/code.css?v=" | append: site.github.build_revision | relative_url  }}">
+  <link rel="stylesheet"
+    href="{{ "/common/assets/css/banner.css?v=" | append: site.github.build_revision | relative_url  }}">
+  <link rel="stylesheet"
+    href="{{ "/common/assets/css/footer.css?v=" | append: site.github.build_revision | relative_url  }}">
+  <link rel="stylesheet"
+    href="{{ "/common/assets/css/site.css?v=" | append: site.github.build_revision | relative_url  }}">
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+  {%- include google-analytics.html -%}
+  {%- endif -%}
+</head>

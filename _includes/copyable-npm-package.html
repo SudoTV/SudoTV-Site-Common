@@ -1,0 +1,49 @@
+{% if include.development %}
+<div>
+    <div class="copyable-code-container">
+        {% highlight bash %}
+        npm install {{ include.package }} --save-dev
+        {% endhighlight %}
+        <button class="copyable-code-button">
+        </button>
+    </div>
+    <div class="copyable-code-container">
+        {% highlight bash %}
+        yarn add {{ include.package }} --dev
+        {% endhighlight %}
+        <button class="copyable-code-button">
+        </button>
+    </div>
+    <div class="copyable-code-container">
+        {% highlight bash %}
+        pnpm add {{ include.package }} --dev
+        {% endhighlight %}
+        <button class="copyable-code-button">
+        </button>
+    </div>
+</div>
+{% else %}
+<div>
+    <div class="copyable-code-container">
+        {% highlight bash %}
+        npm install {{ include.package }} --save
+        {% endhighlight %}
+        <button class="copyable-code-button">
+        </button>
+    </div>
+    <div class="copyable-code-container">
+        {% highlight bash %}
+        yarn add {{ include.package }}
+        {% endhighlight %}
+        <button class="copyable-code-button">
+        </button>
+    </div>
+    <div class="copyable-code-container">
+        {% highlight bash %}
+        pnpm add {{ include.package }}
+        {% endhighlight %}
+        <button class="copyable-code-button">
+        </button>
+    </div>
+</div>
+{% endif %}

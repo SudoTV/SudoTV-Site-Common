@@ -1,0 +1,32 @@
+<div class="site-banner">
+    <div class="site-banner-text">
+        <div>
+            {% if include.partial == "true" %}
+
+            {% if page.localization == "en-US" %}
+            This page is partially translated. Currently partially displaying
+            <strong>{% include localization-text.html language=page.language %}</strong> version.
+            {% elsif page.localization == "zh-CN" %}
+            此页面没有完全翻译的您偏好语言的版本。当前显示的是包含部分<strong>{% include localization-text.html language=page.language %}</strong>的版本。
+            {% endif %}
+
+            {% else %}
+
+            {% if page.localization == "en-US" %}
+            This page is not translated. Currently displaying
+            <strong>{% include localization-text.html language=page.language %}</strong> version.
+            {% elsif page.localization == "zh-CN" %}
+            此页面没有您偏好语言的版本。当前显示的是<strong>{% include localization-text.html language=page.language %}</strong>的版本。
+            {% endif %}
+
+            {% endif %}
+        </div>
+        <div>
+            {% if page.localization == "en-US" %}
+            This site is open source. {% github_edit_link "Help us translate" %}.
+            {% elsif page.localization == "zh-CN" %}
+            本站渲染自开源项目，{% github_edit_link "协助翻译" %}。
+            {% endif %}
+        </div>
+    </div>
+</div>
