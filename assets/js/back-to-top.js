@@ -12,7 +12,7 @@
         });
     });
 
-    window.addEventListener('scroll', () => {
+    const updateStatus = () => {
 
         if (document.body.scrollTop > 20
             || document.documentElement.scrollTop > 20) {
@@ -22,5 +22,8 @@
 
             goToTopButton.classList.add('go-to-top-button-hidden');
         }
-    });
+    };
+
+    window.addEventListener('scroll', updateStatus);
+    updateStatus();
 })();
