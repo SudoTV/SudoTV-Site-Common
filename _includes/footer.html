@@ -13,7 +13,6 @@
                 </div>
                 {% endif %}
             </div>
-            <div class="center-footer"></div>
             <div class="footer-col language-footer">
                 <div class="language-footer-icon">
                     <i class="fa fa-globe" aria-hidden="true"></i>
@@ -26,12 +25,7 @@
         </div>
         <div class="links-footer">
             <ul class="links-footer-ul">
-
-            </ul>
-        </div>
-        <div class="links-footer">
-            <ul class="links-footer-ul">
-                <li class="links-footer-li">
+                <li class="links-footer-li links-footer-li-group-icon">
                     <i class="fa fa-fw fa-map" aria-hidden="true"></i>
                 </li>
                 <li class="links-footer-li">
@@ -101,7 +95,7 @@
         </div>
         <div class="links-footer">
             <ul class="links-footer-ul">
-                <li class="links-footer-li">
+                <li class="links-footer-li links-footer-li-group-icon">
                     <i class="fa fa-fw fa-cubes" aria-hidden="true"></i>
                 </li>
                 <li class="links-footer-li">
@@ -158,6 +152,13 @@
                         {% endif %}
                     </a>
                 </li>
+            </ul>
+        </div>
+        <div class="links-footer">
+            <ul class="links-footer-ul">
+                <li class="links-footer-li links-footer-li-group-icon">
+                    <i class="fa fa-fw fa-map-signs" aria-hidden="true"></i>
+                </li>
                 <li class="links-footer-li">
                     <a href="https://github.com/SudoTV/">
                         {% if page.localization == "en-US" %}
@@ -173,6 +174,15 @@
                         Series Github
                         {% elsif page.localization == "zh-CN" %}
                         剧集 Github
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
+                    <a href="https://space.bilibili.com/351184">
+                        {% if page.localization == "en-US" %}
+                        BiliBili Space
+                        {% elsif page.localization == "zh-CN" %}
+                        BiliBili 空间
                         {% endif %}
                     </a>
                 </li>
