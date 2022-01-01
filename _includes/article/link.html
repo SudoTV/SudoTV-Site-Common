@@ -1,5 +1,6 @@
-<li>
+{% assign localization=page.localization %}
+<li class="article-list-page-li">
     <a href="{{ page.url | append: include.article.path }}">
-        {{ include.article.localization["zh-CN"].title }}
+        {{ include.article.localization[localization].title }}
     </a>
 </li>
