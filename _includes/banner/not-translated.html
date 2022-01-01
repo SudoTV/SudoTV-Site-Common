@@ -6,11 +6,11 @@
             {% if page.localization == "en-US" %}
 
             This page is partially translated. Currently partially displaying
-            <strong>{% include localization-text.html language=page.language %}</strong> version.
+            <strong>{% include localization/localization-text.html language=page.language %}</strong> version.
 
             {% elsif page.localization == "zh-CN" %}
 
-            此页面没有完全翻译的您偏好语言的版本。当前显示的是包含部分<strong>{% include localization-text.html language=page.language %}</strong>的版本。
+            此页面没有完全翻译的您偏好语言的版本。当前显示的是包含部分<strong>{% include localization/localization-text.html language=page.language %}</strong>的版本。
 
             {% endif %}
 
