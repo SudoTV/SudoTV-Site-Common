@@ -1,6 +1,5 @@
 <li>
-    {{ include.article }}
-    <a href="{{ include.article.path | relative_url }}">
+    <a href="{{ page.url | append: include.article.path }}">
         {{ include.article.localization["zh-CN"].title }}
     </a>
 </li>
