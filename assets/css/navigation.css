@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 16px;
 }
 
 .navigation-core-link-outer:hover .navigation-core-link-inner-icon {
