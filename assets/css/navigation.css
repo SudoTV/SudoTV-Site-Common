@@ -1,0 +1,33 @@
+.navigation-core-link-outer {
+    border: 2px solid #4444BB;
+    border-bottom: 5px solid #4444BB;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation-core-link-outer:hover .navigation-core-link-inner-icon {
+    color: #4444BB;
+    font-size: 24px;
+}
+
+.navigation-core-link-inner-text {
+    flex: 1;
+}
+
+.navigation-core-link-inner-icon {
+    font-size: 20px;
+    width: auto;
+    padding: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation-core-link-title {
+    font-size: 24px;
+}
+
+.navigation-core-link-description {
+    font-size: 14px;
+    color: #727272;
+}
