@@ -1,10 +1,10 @@
-<ul class="article-list-page-ul">
-    {% for article in include.articles %}
+<ul class="article-list-ul">
+    {% for topic in site.data.topic %}
 
-    {% assign articleKey=article[0] %}
-    {% assign articleValue=article[1] %}
+    {% assign topicKey=topic[0] %}
+    {% assign topicValue=topic[1] %}
 
-    {% include article/article-link.html article=articleValue %}
+    {% include article/topic-link.html topic=topicValue %}
 
     {% endfor %}
 </ul>
