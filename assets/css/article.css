@@ -3,3 +3,18 @@
     padding: 0;
     margin: 0;
 }
+
+.article-list-li {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.article-list-li-title {
+    font-size: 22px;
+}
+
+.article-list-li-description {
+    font-size: 14px;
+    color: #727272;
+}
