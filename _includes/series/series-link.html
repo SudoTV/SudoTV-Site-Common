@@ -3,18 +3,60 @@
 
 {% if page.localization == "en-US" %}
 
-{% assign episodeText="Latest Updated Episode " | append: include.series.episode.latest %}
+{% capture detail-link %}
+<a href="{{ include.series.episodes[include.series.latest-episode].video-url }}">
+    {{ include.series.episodes[include.series.latest-episode].localization.en-US.title }}
+</a>
+{% endcapture %}
+
+{% capture play-link %}
+<a href="{{ include.series.episodes[include.series.latest-episode].video-url }}">
+    <i class="fa fa-play fa-fw" aria-hidden="true"></i>Play Video
+</a>
+{% endcapture %}
+
+{% assign 
+    episode-text="Latest Updated Episode "
+    | append: include.series.latest-episode
+    | append: ": "
+    | append: detail-link
+%}
+
+{% assign 
+    link-text=play-link
+%}
 
 {% elsif page.localization == "zh-CN" %}
 
-{% assign episodeText="最新更新第 " | append: include.series.episode.latest | append: " 集" %}
+{% capture detail-link %}
+<a href="{{ include.series.episodes[include.series.latest-episode].video-url }}">
+    {{ include.series.episodes[include.series.latest-episode].localization.zh-CN.title }}
+</a>
+{% endcapture %}
+
+{% capture play-link %}
+<a href="{{ include.series.episodes[include.series.latest-episode].video-url }}">
+    <i class="fa fa-play fa-fw" aria-hidden="true"></i>播放视频
+</a>
+{% endcapture %}
+
+{% assign 
+    episode-text="最新更新第 "
+    | append: include.series.latest-episode
+    | append: " 集："
+    | append: detail-link
+%}
+
+{% assign 
+    link-text=play-link
+%}
 
 {% endif %}
-
 
 {% include navigation/core-link.html
     href=include.href
     title=seriesLocalization.title
     description=seriesLocalization.description
-    extra=episodeText
+    extra=episode-text
+    second-extra=link-text
 %}

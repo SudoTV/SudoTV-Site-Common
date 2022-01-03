@@ -1,0 +1,23 @@
+{% assign localization=page.localization %}
+
+{% if include.series.original %}
+
+{% if page.localization == "en-US" %}
+
+<blockquote>
+    A SudoTV Original Series
+</blockquote>
+
+{% elsif page.localization == "zh-CN" %}
+
+<blockquote>
+    SudoTV 原创剧集
+</blockquote>
+
+{% endif %}
+
+{% endif %}
+
+<h1>
+    {{ include.series.localization[localization].title }}
+</h1>
