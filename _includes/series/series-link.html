@@ -1,6 +1,7 @@
 {% assign localization=page.localization %}
+{% assign seriesLocalization=include.series.localization[localization] %}
 {% include navigation/core-link.html
     href=include.href
-    title=include.series.localization[localization].title
-    description=include.series.localization[localization].description
+    title=seriesLocalization.title
+    description=seriesLocalization.description
 %}
