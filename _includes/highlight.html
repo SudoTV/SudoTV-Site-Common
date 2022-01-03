@@ -35,6 +35,11 @@
 {% include_relative {{ include.file }} %}
 {% endhighlight %}
 
+{% when 'powershell' %}
+{% highlight powershell %}
+{% include_relative {{ include.file }} %}
+{% endhighlight %}
+
 {% when 'typescript' %}
 {% highlight typescript %}
 {% include_relative {{ include.file }} %}
