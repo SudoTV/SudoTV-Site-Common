@@ -1,0 +1,6 @@
+{% assign localization=page.localization %}
+{% include navigation/core-link.html
+    href=include.href
+    title=include.series.localization[localization].title
+    description=include.series.localization[localization].description
+%}
