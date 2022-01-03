@@ -16,6 +16,14 @@
         </div>
 
         {% endif %}
+
+        {% if include.second-extra %}
+
+        <div class="navigation-core-link-description">
+            {{ include.second-extra }}
+        </div>
+
+        {% endif %}
     </div>
     <div class="navigation-core-link-inner-icon">
         <a href="{{ include.href }}">
