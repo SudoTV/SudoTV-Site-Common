@@ -1,0 +1,26 @@
+<div class="site-banner">
+    <div class="site-banner-text">
+        <div>
+            {% if page.localization == "en-US" %}
+
+            This chapter is referencing the following sites:
+
+            {% elsif page.localization == "zh-CN" %}
+
+            本章节引用了以下站点：
+
+            {% endif %}
+        </div>
+        <div>
+            {% for reference in include.references %}
+            <ul class="site-banner-ul">
+                <li>
+                    <a href="{{ reference.url }}" title="{{ reference.url }}">
+                        {{ reference.title }}
+                    </a>
+                </li>
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+</div>

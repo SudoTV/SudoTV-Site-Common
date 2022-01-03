@@ -30,3 +30,9 @@
     background-color: #4444BB;
     color: #FFFFFF;
 }
+
+.site-banner-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
