@@ -8,6 +8,14 @@
         <div class="navigation-core-link-description">
             {{ include.description }}
         </div>
+
+        {% if include.extra %}
+
+        <div class="navigation-core-link-description">
+            {{ include.extra }}
+        </div>
+
+        {% endif %}
     </div>
     <div class="navigation-core-link-inner-icon">
         <a href="{{ include.href }}">

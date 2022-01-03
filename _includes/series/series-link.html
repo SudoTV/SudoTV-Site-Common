@@ -1,7 +1,20 @@
 {% assign localization=page.localization %}
 {% assign seriesLocalization=include.series.localization[localization] %}
+
+{% if page.localization == "en-US" %}
+
+{% assign episodeText="Latest Updated Episode " | append: include.series.episode.latest %}
+
+{% elsif page.localization == "zh-CN" %}
+
+{% assign episodeText="最新更新第 " | append: include.series.episode.latest | append: " 集" %}
+
+{% endif %}
+
+
 {% include navigation/core-link.html
     href=include.href
     title=seriesLocalization.title
     description=seriesLocalization.description
+    extra=episodeText
 %}
