@@ -1,0 +1,6 @@
+{% assign absolute-link=page.url | append: include.href %}
+{% include navigation/link-grid-absolute-item.html
+    href=absolute-link
+    title=include.title
+    description=include.description
+%}

@@ -2,15 +2,18 @@
     <div class="navigation-core-link-inner-text">
         <div class="navigation-link-grid-item-title">
             <a href="{{ include.href }}" class="navigation-core-link-link">
-                Title
+                {{ include.title }}
             </a>
         </div>
+
+        {% if include.description %}
         <div class="navigation-link-grid-item-description">
-            Description
+            {{ include.description }}
         </div>
+        {% endif %}
     </div>
     <div class="navigation-core-link-inner-icon">
-        <a href="href">
+        <a href="{{ include.href }}">
             <i class="fa fa-chevron-right" aria-hidden="true"></i>
         </a>
     </div>
