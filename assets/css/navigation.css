@@ -1,4 +1,5 @@
 .navigation-core-link-outer {
+
     border: 2px solid #4444BB;
     border-bottom: 5px solid #4444BB;
     padding: 8px;
@@ -9,15 +10,18 @@
 }
 
 .navigation-core-link-outer:hover .navigation-core-link-inner-icon {
+
     color: #4444BB;
     font-size: 24px;
 }
 
 .navigation-core-link-inner-text {
+
     flex: 1;
 }
 
 .navigation-core-link-inner-icon {
+
     font-size: 20px;
     width: auto;
     padding: 8px;
@@ -25,12 +29,26 @@
 }
 
 .navigation-core-link-title {
+
     font-size: 24px;
 }
 
 .navigation-core-link-description {
+
     font-size: 14px;
     color: #727272;
 }
 
-.navigation-link-grid {}
+.navigation-link-grid {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    row-gap: 8px;
+    column-gap: 8px;
+}
+
+.navigation-link-grid-item {
+
+    padding: 8px;
+    border: 2px solid red;
+}
