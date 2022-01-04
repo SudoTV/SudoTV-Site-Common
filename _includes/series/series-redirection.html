@@ -1,0 +1,41 @@
+{% assign localization=page.localization %}
+
+{% if page.localization == "en-US" %}
+
+{% include navigation/link-grid-start.html %}
+
+{% include navigation/link-grid-absolute-item.html
+    href=include.series.repository-url
+    title="Github"
+%}
+{% include navigation/link-grid-absolute-item.html
+    href=include.series.issue-url
+    title="Issue"
+%}
+{% include navigation/link-grid-absolute-item.html
+    href=include.series.discussion-url
+    title="Discussion"
+%}
+
+{% include navigation/link-grid-end.html %}
+
+{% elsif page.localization == "zh-CN" %}
+
+{% include navigation/link-grid-start.html %}
+
+{% include navigation/link-grid-absolute-item.html
+    href=include.series.repository-url
+    title="Github"
+%}
+{% include navigation/link-grid-absolute-item.html
+    href=include.series.issue-url
+    title="Issue"
+%}
+{% include navigation/link-grid-absolute-item.html
+    href=include.series.discussion-url
+    title="讨论区"
+%}
+
+{% include navigation/link-grid-end.html %}
+
+{% endif %}
