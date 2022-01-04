@@ -53,11 +53,24 @@
     align-items: center;
     justify-content: center;
     padding: 8px;
-    border: 2px solid red;
+    border: 2px solid #4444BB;
+    border-bottom: 5px solid #4444BB;
+}
+
+.navigation-link-grid-item-title {
+
+    font-size: 22px;
+    line-height: 22px;
+}
+
+.navigation-link-grid-item-description {
+
+    font-size: 14px;
+    line-height: 14px;
+    color: #727272;
 }
 
 .navigation-link-grid-item:hover .navigation-core-link-inner-icon {
 
     color: #4444BB;
-    font-size: 24px;
 }
