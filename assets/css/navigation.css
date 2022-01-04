@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 16px;
+    min-width: 180px;
 }
 
 .navigation-core-link-outer:hover .navigation-core-link-inner-icon {
