@@ -55,6 +55,12 @@
         },
     };
 
+    const closeMap = {
+
+        'zh-CN': '忽略并关闭跨站提示',
+        'en-US': 'Ignore and close cross site banner',
+    };
+
     const crossSiteBanner = document.getElementById('cross-site-banner');
     const crossSiteBannerText = document.getElementById('cross-site-banner-text');
     const crossSiteBannerClose = document.getElementById('cross-site-banner-close');
@@ -93,6 +99,8 @@
     });
 
     crossSiteBanner.classList.remove('site-banner-hidden');
+
+    crossSiteBannerClose.title = closeMap[language];
 
     switch (language) {
 
