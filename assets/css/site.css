@@ -1,3 +1,7 @@
+blockquote {
+    font-size: 16px;
+}
+
 .site-header {
     border-top-color: #4444BB !important;
 }
@@ -35,4 +39,8 @@
 .go-to-top-button:active {
     background-color: #4444BB;
     color: #FFFFFF;
+}
+
+.site-centered {
+    text-align: center;
 }
