@@ -1,0 +1,27 @@
+{% include series/series-title.html
+    series=include.series
+%}
+
+{% include series/series-redirection.html
+    series=include.series
+%}
+
+{% if include.series.status == "finale" %}
+
+{% elsif include.series.status == "paused" %}
+
+{% include series/series-episode-latest.html
+    series=include.series
+%}
+
+{% elsif include.series.status == "updating" %}
+
+{% include series/series-episode-latest.html
+    series=include.series
+%}
+
+{% endif %}
+
+{% include series/series-episode-list.html
+    series=include.series
+%}
