@@ -1,13 +1,27 @@
 <div class="navigation-core-link-outer">
     <div class="navigation-core-link-inner-text">
+
+        {% if include.pre %}
+
+        <div class="navigation-core-link-description">
+            {{ include.pre }}
+        </div>
+
+        {% endif %}
+
         <div class="navigation-core-link-title">
             <a href="{{ include.href }}" class="navigation-core-link-link">
                 {{ include.title }}
             </a>
         </div>
+
+        {% if include.description %}
+
         <div class="navigation-core-link-description">
             {{ include.description }}
         </div>
+
+        {% endif %}
 
         {% if include.extra %}
 
