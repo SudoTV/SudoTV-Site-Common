@@ -1,0 +1,68 @@
+{% assign localization=page.localization %}
+
+{% assign sorted-list=include.series.episodes %}
+
+{% if page.localization == "en-US" %}
+
+<h2>
+    All Episodes
+</h2>
+
+{% elsif page.localization == "zh-CN" %}
+
+<h2>
+    所有集数
+</h2>
+
+{% endif %}
+
+<ul class="series-list-ul">
+    {% for episode in sorted-list %}
+
+    {% assign episodeKey=episode[0] %}
+    {% assign episodeValue=episode[1] %}
+
+    {% capture pre %}
+
+    {% if localization == "en-US" %}
+
+    Episode {{ episodeKey }}
+
+    {% elsif localization == "zh-CN" %}
+
+    第 {{ episodeKey }} 集
+
+    {% endif %}
+
+    {% endcapture %}
+
+    {% capture description %}
+
+    {% include localization/date.html
+        date=episodeValue.release-date
+    %}
+
+    {% endcapture %}
+
+    {% capture extra %}
+
+    {% include series/play-link.html
+        episode=episodeValue
+    %}
+
+    {% endcapture %}
+
+    {% assign title=episodeValue.localization[localization].title %}
+
+    <li class="series-list-li">
+        {% include navigation/core-link.html
+            pre=pre
+            href=episodeKey
+            title=title
+            description=description
+            extra=extra
+        %}
+    </li>
+
+    {% endfor %}
+</ul>
