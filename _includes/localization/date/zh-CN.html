@@ -1,0 +1,31 @@
+{% assign year = include.date | date: "%Y" %}
+{% assign month = include.date | date: "%-m" %}
+{% assign day = include.date | date: "%-d" %}
+
+{% capture text-month %}
+{% case month %}
+{% when '1' %} 一月
+{% when '2' %} 二月
+{% when '3' %} 三月
+{% when '4' %} 四月
+{% when '5' %} 五月
+{% when '6' %} 六月
+{% when '7' %} 七月
+{% when '8' %} 八月
+{% when '9' %} 九月
+{% when '10' %} 十月
+{% when '11' %} 十一月
+{% when '12' %} 十二月
+{% endcase %}
+{% endcapture %}
+
+{% assign fixed-month = text-month | strip %}
+
+{% assign final-text = year 
+    | append: "年"
+    | append: fixed-month
+    | append: day
+    | append: "日"
+%}
+
+{{ final-text }}

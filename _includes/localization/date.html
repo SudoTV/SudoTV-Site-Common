@@ -1,0 +1,15 @@
+{% assign localization=page.localization %}
+
+{% if localization == "en-US" %}
+
+{% include localization/date/en-US.html
+    date=include.date
+%}
+
+{% elsif localization == "zh-CN" %}
+
+{% include localization/date/zh-CN.html
+    date=include.date
+%}
+
+{% endif %}

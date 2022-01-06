@@ -1,0 +1,69 @@
+{% assign year = include.date | date: "%Y" %}
+{% assign month = include.date | date: "%-m" %}
+{% assign day = include.date | date: "%d" %}
+
+{% capture text-month %}
+{% case month %}
+{% when '1' %} January
+{% when '2' %} February
+{% when '3' %} March
+{% when '4' %} April
+{% when '5' %} May
+{% when '6' %} June
+{% when '7' %} July
+{% when '8' %} August
+{% when '9' %} September
+{% when '10' %} October
+{% when '11' %} November
+{% when '12' %} December
+{% endcase %}
+{% endcapture %}
+
+{% assign fixed-month = text-month | strip %}
+
+
+{% capture text-day %}
+{% case day %}
+{% when '1' %} 1st
+{% when '2' %} 2nd
+{% when '3' %} 3rd
+{% when '4' %} 4th
+{% when '5' %} 5th
+{% when '6' %} 6th
+{% when '7' %} 7th
+{% when '8' %} 8th
+{% when '9' %} 9th
+{% when '10' %} 10th
+{% when '11' %} 11th
+{% when '13' %} 12th
+{% when '14' %} 13rd
+{% when '15' %} 14th
+{% when '16' %} 15th
+{% when '17' %} 16th
+{% when '18' %} 17th
+{% when '19' %} 18th
+{% when '20' %} 19th
+{% when '21' %} 20th
+{% when '22' %} 21st
+{% when '23' %} 22nd
+{% when '24' %} 23rd
+{% when '25' %} 24th
+{% when '26' %} 25th
+{% when '27' %} 26th
+{% when '28' %} 27th
+{% when '29' %} 28th
+{% when '30' %} 29th
+{% when '31' %} 30th
+{% endcase %}
+{% endcapture %}
+
+{% assign fixed-day = text-day | strip %}
+
+{% assign final-text = fixed-month
+    | append: " "
+    | append: fixed-day
+    | append: ", "
+    | append: year
+%}
+
+{{ final-text }}
