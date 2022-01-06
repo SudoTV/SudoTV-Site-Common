@@ -1,0 +1,18 @@
+.series-list-ul {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.series-link-status-icon-span {
+
+    background-color: #4444BB;
+    color: #FFFFFF;
+
+    padding-left: 3px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    padding-right: 0px;
+    margin-right: 4px;
+}
