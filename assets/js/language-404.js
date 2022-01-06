@@ -7,7 +7,7 @@ const language = getLanguage();
         return path.startsWith(`/${each}`);
     })) {
 
-        document.write(originalContent);
+        document.write(originalContent[language]);
         return;
     }
 

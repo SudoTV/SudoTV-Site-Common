@@ -2,7 +2,18 @@
 layout: default
 ---
 
+{% capture en-US %}
+{% include 404/en-US.html %}
+{% endcapture %}
+
+{% capture zh-CN %}
+{% include 404/zh-CN.html %}
+{% endcapture %}
+
 <script>
-    const originalContent = `{{ content }}`;
+    const originalContent = {
+        'en-US': `{{ en-US | raw }}`,
+        'zh-CN': `{{ zh-CN | raw }}`,
+    };
 </script>
 <script src="/common/assets/js/language-404.js"></script>
