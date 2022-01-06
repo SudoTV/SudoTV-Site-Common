@@ -1,17 +1,79 @@
 {% assign localization=page.localization %}
 {% assign seriesLocalization=include.series.localization[localization] %}
 
-{% if page.localization == "en-US" %}
+{% capture pre %}
 
-{% capture detail-link %}
-<a href="{{ include.series.episodes[include.series.latest-episode].video-url }}">
-    {{ include.series.episodes[include.series.latest-episode].localization.en-US.title }}
-</a>
+{% if include.series.status == "finale" %}
+
+{% if localization == "en-US" %}
+
+<span class="series-link-status-icon-span">
+    <i class="fa fa-fw fa-check" aria-hidden="true"></i>
+</span>Finale
+
+{% elsif localization == "zh-CN" %}
+
+<span class="series-link-status-icon-span">
+    <i class="fa fa-fw fa-check" aria-hidden="true"></i>
+</span>已完结
+
+{% endif %}
+
+{% elsif include.series.status == "paused" %}
+
+{% if localization == "en-US" %}
+
+<span class="series-link-status-icon-span">
+    <i class="fa fa-fw fa-pause" aria-hidden="true"></i>
+</span>Update Paused
+
+{% elsif localization == "zh-CN" %}
+
+<span class="series-link-status-icon-span">
+    <i class="fa fa-fw fa-pause" aria-hidden="true"></i>
+</span>暂停更新
+
+{% endif %}
+
+{% elsif include.series.status == "updating" %}
+
+{% if localization == "en-US" %}
+
+<span class="series-link-status-icon-span">
+    <i class="fa fa-fw fa-bolt" aria-hidden="true"></i>
+</span>Updated -
+
+{% elsif localization == "zh-CN" %}
+
+<span class="series-link-status-icon-span">
+    <i class="fa fa-fw fa-bolt" aria-hidden="true"></i>
+</span>更新于 -
+
+{% endif %}
+
+{% assign latest-release-date=include.series.episodes[include.series.latest-episode].release-date %}
+{% include localization/date.html
+    date=latest-release-date
+%}
+
+{% endif %}
+
 {% endcapture %}
 
 {% capture play-link %}
-<a href="{{ include.series.episodes[include.series.latest-episode].video-url }}">
-    <i class="fa fa-play fa-fw" aria-hidden="true"></i>Play Video
+
+{% assign latestSeries=include.series.episodes[include.series.latest-episode] %}
+{% include series/play-link.html
+    episode=latestSeries
+%}
+
+{% endcapture %}
+
+{% if page.localization == "en-US" %}
+
+{% capture detail-link %}
+<a href="{{ include.series.episodes[include.series.latest-episode].video-url[localization].url }}">
+    {{ include.series.episodes[include.series.latest-episode].localization.en-US.title }}
 </a>
 {% endcapture %}
 
@@ -29,21 +91,15 @@
 {% elsif page.localization == "zh-CN" %}
 
 {% capture detail-link %}
-<a href="{{ include.series.episodes[include.series.latest-episode].video-url }}">
+<a href="{{ include.series.episodes[include.series.latest-episode].video-url[localization].url }}">
     {{ include.series.episodes[include.series.latest-episode].localization.zh-CN.title }}
-</a>
-{% endcapture %}
-
-{% capture play-link %}
-<a href="{{ include.series.episodes[include.series.latest-episode].video-url }}">
-    <i class="fa fa-play fa-fw" aria-hidden="true"></i>播放视频
 </a>
 {% endcapture %}
 
 {% assign 
     episode-text="最新更新第 "
     | append: include.series.latest-episode
-    | append: " 集："
+    | append: " 集 -"
     | append: detail-link
 %}
 
@@ -53,10 +109,35 @@
 
 {% endif %}
 
+{% if include.series.status == "finale" %}
+
 {% include navigation/core-link.html
     href=include.href
+    pre=pre
+    title=seriesLocalization.title
+    description=seriesLocalization.description
+%}
+
+{% elsif include.series.status == "paused" %}
+
+{% include navigation/core-link.html
+    href=include.href
+    pre=pre
     title=seriesLocalization.title
     description=seriesLocalization.description
     extra=episode-text
     second-extra=link-text
 %}
+
+{% elsif include.series.status == "updating" %}
+
+{% include navigation/core-link.html
+    href=include.href
+    pre=pre
+    title=seriesLocalization.title
+    description=seriesLocalization.description
+    extra=episode-text
+    second-extra=link-text
+%}
+
+{% endif %}
