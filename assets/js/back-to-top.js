@@ -2,8 +2,6 @@
 
     const goToTopButton = document.getElementById("go-to-top-button");
 
-    console.log(goToTopButton);
-
     goToTopButton.addEventListener('click', () => {
 
         window.scrollTo({
