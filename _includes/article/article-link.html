@@ -1,11 +1,12 @@
 {% assign localization=page.localization %}
 <li class="article-list-li">
-    <a class="article-list-li-title" href="{{ page.url | append: include.article.path }}">
-        {{ include.article.localization[localization].title }}
-    </a>
-    {% if include.article.localization[localization].description %}
-    <div class="article-list-li-description">
-        {{ include.article.localization[localization].description }}
-    </div>
-    {% endif %}
+
+    {% assign title=include.article.localization[localization].title %}
+    {% assign description=include.article.localization[localization].description %}
+
+    {% include navigation/core-link.html
+        href=include.article.path
+        title=title
+        description=description
+    %}
 </li>
