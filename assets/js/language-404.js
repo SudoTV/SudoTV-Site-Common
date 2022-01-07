@@ -8,6 +8,12 @@ const language = getLanguage();
     })) {
 
         document.write(originalContent[language]);
+
+        if (language === 'zh-CN') {
+            document.title = "404 - 页面未找到 | sudo.tv";
+        } else {
+            document.title = "404 - Page not found | sudo.tv";
+        }
         return;
     }
 

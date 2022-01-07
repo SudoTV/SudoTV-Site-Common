@@ -1,9 +1,14 @@
 (() => {
 
-    document.getElementById('language-select').value = getLanguage();
+    const languageSelects = document.querySelectorAll('.language-select');
 
-    document.getElementById('language-select').addEventListener('change', (event) => {
+    for (const languageSelect of languageSelects) {
 
-        setLanguage(event.target.value);
-    });
+        languageSelect.value = getLanguage();
+
+        languageSelect.addEventListener('change', (event) => {
+
+            setLanguage(event.target.value);
+        });
+    }
 })();
