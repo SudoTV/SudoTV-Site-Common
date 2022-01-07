@@ -1,5 +1,6 @@
 {% assign absolute-link=page.url | append: include.href %}
 {% include navigation/link-grid-absolute-item.html
+    with-origin=include.with-origin
     href=absolute-link
     title=include.title
     description=include.description
