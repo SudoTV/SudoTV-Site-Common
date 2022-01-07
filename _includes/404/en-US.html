@@ -1,3 +1,21 @@
 <h1>Page Not Found</h1>
 
-404
+<p>
+    The page you are looking for seems does not exist.
+</p>
+
+{% include navigation/link-grid-start.html %}
+
+{% include navigation/link-grid-absolute-item.html
+    href="/"
+    title="Home"
+    description="Go home page"
+%}
+
+{% include navigation/link-grid-absolute-item.html
+    href="https://sudo.tv/contact"
+    title="Contact Us"
+    description="Let us know what goes wrong"
+%}
+
+{% include navigation/link-grid-end.html %}
