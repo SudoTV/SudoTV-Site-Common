@@ -14,11 +14,27 @@
 
         {% if page.localization == "en-US" %}
 
-        With {{ include.shell }}, run the following command.
+        With {{ include.shell }},
+
+        {% if include.sudo %}
+        with super user permission,
+        {% elsif include.admin %}
+        with administrator permission,
+        {% endif %}
+
+        run the following command.
 
         {% elsif page.localization == "zh-CN" %}
 
-        使用 {{ include.shell }}，运行以下命令。
+        {% capture permission-text %}
+        {% if include.sudo %}
+        带有系统管理员权限的
+        {% elsif include.admin %}
+        带有管理员权限的
+        {% endif %}
+        {% endcapture %}
+
+        使用{{ permission-text | strip }} {{ include.shell }}，运行以下命令。
 
         {% endif %}
 
@@ -40,7 +56,7 @@
 
         {% elsif page.localization == "zh-CN" %}
 
-        此代码片段使用且包含了动态内容。请在运行前检查所有动态内容以保证安全。我们严肃的看待安全性并已经确认了它是安全的，但是你应该在运行之前检查任何你不熟悉的内容的安全性。
+        此代码片段包含且使用了动态内容。请在运行前检查所有动态内容以保证安全。我们严肃的看待安全性并已经确认了它是安全的，但是你应该在运行之前检查任何你不熟悉的内容的安全性。
 
         {% endif %}
 
