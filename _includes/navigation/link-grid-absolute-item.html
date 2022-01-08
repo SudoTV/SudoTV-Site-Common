@@ -6,12 +6,28 @@
 
             <a data-origin="{{ site.application_name }}" href="{{ include.href }}" class="navigation-core-link-link">
                 {{ include.title }}
+
+                {% if include.external %}
+
+                <span class="navigation-core-link-link-icon">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                </span>
+
+                {% endif %}
             </a>
 
             {% else %}
 
             <a href="{{ include.href }}" class="navigation-core-link-link">
                 {{ include.title }}
+
+                {% if include.external %}
+
+                <span class="navigation-core-link-link-icon">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                </span>
+
+                {% endif %}
             </a>
 
             {% endif %}
