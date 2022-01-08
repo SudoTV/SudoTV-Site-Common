@@ -40,6 +40,16 @@
     color: #727272;
 }
 
+.navigation-core-link-link {
+
+    vertical-align: middle;
+}
+
+.navigation-core-link-link-icon {
+
+    font-size: 16px;
+}
+
 .navigation-link-grid {
 
     display: grid;
