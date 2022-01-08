@@ -34,13 +34,13 @@
 
         {% if page.localization == "en-US" %}
 
-        This command contains dynamic content. Please inspect any dynamic content prior to running to ensure safety. We
-        already know it's safe, but you should verify the security and contents of any script from the internet you are
-        not familiar with.
+        This code snippet contains and uses dynamic content. Please inspect any dynamic content before running to ensure
+        safety. We take security seriously and have already verified its safety, but you should verify the security and
+        contents of any script from the internet you are not familiar with.
 
         {% elsif page.localization == "zh-CN" %}
 
-        使用 {{ file-text contains "://" }}，运行以下命令。
+        此代码片段使用且包含了动态内容。请在运行前检查所有动态内容以保证安全。我们严肃的看待安全性并已经确认了它是安全的，但是你应该在运行之前检查任何你不熟悉的内容的安全性。
 
         {% endif %}
 
