@@ -1,3 +1,33 @@
+{% assign localization=page.localization %}
+
+{% capture file-text %}
+
+{% include_relative {{ include.file }} %}
+
+{% endcapture %}
+
+{% if file-text contains "://" or include.shell %}
+
+<blockquote>
+    <p>
+        {% if include.shell %}
+
+        {% if page.localization == "en-US" %}
+
+        With {{ include.shell }}, run the following command.
+
+        {% elsif page.localization == "zh-CN" %}
+
+        使用 {{ include.shell }}，运行以下命令。
+
+        {% endif %}
+
+        {% endif %}
+    </p>
+</blockquote>
+
+{% endif %}
+
 <div class="copyable-code-container">
     {% include highlight.html
         language=include.language
