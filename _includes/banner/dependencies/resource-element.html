@@ -1,5 +1,10 @@
+{% assign localization=page.localization %}
+
 <ul class="site-banner-ul">
     <li>
-        123
+        <a href="{{ "/topic/" | append: include.dependency.path | relative_url }}"
+            title="{{ include.dependency.localization[localization].description }}">
+            {{ include.dependency.localization[localization].name }}
+        </a>
     </li>
 </ul>
