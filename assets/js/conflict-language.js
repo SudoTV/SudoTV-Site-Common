@@ -50,6 +50,13 @@
         localStorage.setItem('sudo-tv-language', pageLanguage);
 
         outer.classList.add('conflict-language-banner-outer-hidden');
+
+        const languageSelects = document.querySelectorAll('.language-select');
+
+        for (const languageSelect of languageSelects) {
+
+            languageSelect.value = pageLanguage;
+        }
     });
 
     bannerClose.addEventListener('click', () => {
