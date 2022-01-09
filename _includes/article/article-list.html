@@ -1,5 +1,6 @@
+{% assign sorted-list=include.articles %}
 <ul class="article-list-ul">
-    {% for article in include.articles %}
+    {% for article in sorted-list %}
 
     {% assign articleKey=article[0] %}
     {% assign articleValue=article[1] %}

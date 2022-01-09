@@ -1,5 +1,6 @@
+{% assign sorted-list=site.data.topic %}
 <ul class="article-list-ul">
-    {% for topic in site.data.topic %}
+    {% for topic in sorted-list %}
 
     {% assign topicKey=topic[0] %}
     {% assign topicValue=topic[1] %}
