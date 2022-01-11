@@ -8,13 +8,25 @@
 
 {% if file-text contains "://" or include.shell %}
 
+{% capture shell-type %}
+{% if include.shell == "any-terminal" %}
+{% if localization == "en-US" %}
+&nbsp;Any Terminal Shell
+{% elsif localization == "zh-CN" %}
+任何命令行工具
+{% endif %}
+{% else %}
+&nbsp;{{ include.shell }}
+{% endif %}
+{% endcapture %}
+
 <blockquote>
     <p>
         {% if include.shell %}
 
         {% if page.localization == "en-US" %}
 
-        With {{ include.shell }},
+        With{{ shell-type | strip }},
 
         {% if include.sudo %}
         with super user permission,
@@ -34,7 +46,7 @@
         {% endif %}
         {% endcapture %}
 
-        使用{{ permission-text | strip }} {{ include.shell }}，运行以下命令。
+        使用{{ permission-text | strip }}{{ shell-type | strip }}，运行以下命令。
 
         {% endif %}
 
