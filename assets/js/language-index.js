@@ -1,6 +1,6 @@
-const language = getLanguage();
-
 (() => {
+
+    const language = getLanguage();
 
     const tempUrl = `${window.location.pathname}${window.location.search}`;
 

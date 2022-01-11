@@ -16,6 +16,15 @@ const getLanguage = () => {
     return language;
 };
 
+const getPageLanguageByPath = () => {
+
+    const path = window.location.pathname;
+
+    return availableLanguages.find((each) => {
+        return path.startsWith(`/${each}`);
+    });
+};
+
 const setLanguage = (language) => {
 
     localStorage.setItem('sudo-tv-language', language);
