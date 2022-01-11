@@ -1,22 +1,24 @@
+{% assign localization=page.localization %}
+
 <div class="site-banner">
     <div class="site-banner-text">
         <div>
-            {% if page.localization == "en-US" %}
+            {% if localization == "en-US" %}
 
             This page is not ready yet, but we're working on it.
 
-            {% elsif page.localization == "zh-CN" %}
+            {% elsif localization == "zh-CN" %}
 
             此页面还没有准备好，但我们正在努力中。
 
             {% endif %}
         </div>
         <div>
-            {% if page.localization == "en-US" %}
+            {% if localization == "en-US" %}
 
             This site is open source. {% github_edit_link "Help us complete" %}.
 
-            {% elsif page.localization == "zh-CN" %}
+            {% elsif localization == "zh-CN" %}
 
             本站渲染自开源项目，{% github_edit_link "帮助我们完成" %}。
 
