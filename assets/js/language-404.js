@@ -1,6 +1,7 @@
-const language = getLanguage();
-
 (() => {
+
+    const language = getPageLanguageByPath() ?? getLanguage();
+
     const path = window.location.pathname;
 
     if (availableLanguages.some((each) => {
