@@ -24,6 +24,7 @@
 
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
+            {%- include conflict-language/banner.html -%}
             <script>
                 const originalContent = {
                     'en-US': `{{ en-US }}`,
@@ -31,6 +32,7 @@
                 };
             </script>
             <script src="/common/assets/js/language-404.js"></script>
+            <script src="/common/assets/js/conflict-language.js"></script>
         </div>
     </main>
     <button id="go-to-top-button" class="go-to-top-button go-to-top-button-hidden" title="Go to top">

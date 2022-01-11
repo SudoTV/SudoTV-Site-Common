@@ -1,7 +1,7 @@
 (() => {
 
     const preferenceLanguage = getLanguage();
-    const pageLanguage = pageCommon.language;
+    const pageLanguage = pageCommon.language || getPageLanguageByPath();
 
     if (preferenceLanguage === pageLanguage) {
         return;
