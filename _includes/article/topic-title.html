@@ -1,0 +1,17 @@
+{% assign localization=page.localization %}
+
+<h1>
+    {% if localization == "en-US" %}
+
+    {{ include.topic.localization[localization].name }} Topic
+
+    {% elsif localization == "zh-CN" %}
+
+    有关 {{ include.topic.localization[localization].name }} 的主题
+
+    {% endif %}
+</h1>
+
+<p>
+    {{ include.topic.localization[localization].description }}
+</p>

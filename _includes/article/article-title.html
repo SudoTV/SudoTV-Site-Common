@@ -1,0 +1,9 @@
+{% assign localization=page.localization %}
+
+<h1>
+    {{ include.article.localization[localization].title }}
+</h1>
+
+<p>
+    {{ include.article.localization[localization].description }}
+</p>
