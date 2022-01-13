@@ -55,3 +55,8 @@ blockquote {
 
     display: none;
 }
+
+.cross-site-go-back {
+
+    cursor: pointer;
+}
