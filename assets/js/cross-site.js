@@ -114,7 +114,7 @@
             case 'zh-CN': {
                 messageQueue.push(
                     '您似乎自一个 SudoTV 的子网站重定向而来。如果您不想被重定向，',
-                    `请点击 <a href="${subMap[params.origin].backLinkUrl}">${subMap[params.origin].backLinkName}</a> 以返回，或者<a id="cross-site-go-back" class="cross-site-go-back">返回上一页面</a>。`,
+                    `请点击 <a href="${subMap[params.origin].backLinkUrl}">${subMap[params.origin].backLinkName}</a> 以返回，或者 <a id="cross-site-go-back" class="cross-site-go-back">返回上一页面</a>。`,
                 );
                 break;
             }
