@@ -1,0 +1,6 @@
+{% assign href="https://resource.sudo.tv/topic/" | append: include.dependency.path | append: "?origin=" | append: site.application_name | relative_url %}
+
+{% include banner/dependencies/absolute-resource-element.html
+    dependency=include.dependency
+    href=href
+%}
