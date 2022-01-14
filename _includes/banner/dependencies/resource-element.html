@@ -1,10 +1,6 @@
-{% assign localization=page.localization %}
+{% assign href="/topic/" | append: include.dependency.path | relative_url %}
 
-<ul class="site-banner-ul">
-    <li>
-        <a href="{{ "/topic/" | append: include.dependency.path | relative_url }}"
-            title="{{ include.dependency.localization[localization].description }}">
-            {{ include.dependency.localization[localization].name }}
-        </a>
-    </li>
-</ul>
+{% include banner/dependencies/absolute-resource-element.html
+    dependency=include.dependency
+    href=href
+%}
