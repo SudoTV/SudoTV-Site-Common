@@ -85,6 +85,10 @@
         return;
     }
 
+    if (subMap[params.origin] === undefined) {
+        return;
+    }
+
     crossSiteBannerClose.addEventListener('click', () => {
 
         urlSearchParams.delete('origin');
