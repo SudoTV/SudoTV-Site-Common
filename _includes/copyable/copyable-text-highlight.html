@@ -11,7 +11,7 @@
 {% capture shell-type %}
 {% if include.shell == "any-terminal" %}
 {% if localization == "en-US" %}
-&nbsp;Any Terminal Shell
+&nbsp;any terminal shell
 {% elsif localization == "zh-CN" %}
 任何命令行工具
 {% endif %}
@@ -63,12 +63,12 @@
         {% if page.localization == "en-US" %}
 
         This code snippet contains and uses dynamic content. Please inspect any dynamic content before running to ensure
-        safety. We take security seriously and have already verified its safety, but you should verify the security and
-        contents of any script from the internet you are not familiar with.
+        safety. We take security seriously and have already verified they are safe, but you should always verify the
+        security and contents of any script from the internet you are not familiar with.
 
         {% elsif page.localization == "zh-CN" %}
 
-        此代码片段包含且使用了动态内容。请在运行前检查所有动态内容以保证安全。我们严肃的看待安全性并已经确认了它是安全的，但是你应该在运行之前检查任何你不熟悉的内容的安全性。
+        此代码片段包含且使用了动态内容。请在运行前检查所有动态内容以保证安全。我们严肃的看待安全性并已经确认了它们是安全的，但是你总是应该在运行之前检查任何你不熟悉的内容的安全性。
 
         {% endif %}
 
