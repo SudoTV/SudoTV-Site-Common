@@ -52,8 +52,7 @@ git checkout tags/{{ include.series.episodes[include.episode-id].git.before-tag 
 
 {% capture new-text %}
 
-git clone {{ include.series.clone-url.https }} --branch
-{{ include.series.episodes[include.episode-id].git.before-tag }}
+git clone {{ include.series.clone-url.https }} --branch {{ include.series.episodes[include.episode-id].git.before-tag }}
 
 {% endcapture %}
 
