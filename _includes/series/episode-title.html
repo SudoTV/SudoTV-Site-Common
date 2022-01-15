@@ -23,6 +23,14 @@
         {{ include.series.episodes[include.episode-id].localization[localization].title }}
     </h1>
     <span>
-        {{ include.series.localization[localization].title }}
+        {% if page.localization == "en-US" %}
+
+        {{ include.series.localization[localization].title }} - Episode {{ include.episode-id }}
+
+        {% elsif page.localization == "zh-CN" %}
+
+        {{ include.series.localization[localization].title }} - 第 {{ include.episode-id }} 集
+
+        {% endif %}
     </span>
 </div>
