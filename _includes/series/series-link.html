@@ -72,7 +72,7 @@
 {% if page.localization == "en-US" %}
 
 {% capture detail-link %}
-<a href="{{ include.series.episodes[include.series.latest-episode].video-url[localization].url }}">
+<a href="{{ include.href }}/{{ include.series.latest-episode }}">
     {{ include.series.episodes[include.series.latest-episode].localization.en-US.title }}
 </a>
 {% endcapture %}
@@ -91,7 +91,7 @@
 {% elsif page.localization == "zh-CN" %}
 
 {% capture detail-link %}
-<a href="{{ include.series.episodes[include.series.latest-episode].video-url[localization].url }}">
+<a href="{{ include.href }}/{{ include.series.latest-episode }}">
     {{ include.series.episodes[include.series.latest-episode].localization.zh-CN.title }}
 </a>
 {% endcapture %}
