@@ -1,0 +1,48 @@
+{% case include.language %}
+
+{% when 'csharp' %}
+{% highlight csharp %}
+{{ include.text }}
+{% endhighlight %}
+
+{% when 'java' %}
+{% highlight java %}
+{{ include.text }}
+{% endhighlight %}
+
+{% when 'javascript' %}
+{% highlight javascript %}
+{{ include.text }}
+{% endhighlight %}
+
+{% when 'php' %}
+{% highlight php %}
+{{ include.text }}
+{% endhighlight %}
+
+{% when 'python' %}
+{% highlight python %}
+{{ include.text }}
+{% endhighlight %}
+
+{% when 'ruby' %}
+{% highlight ruby %}
+{{ include.text }}
+{% endhighlight %}
+
+{% when 'shell' %}
+{% highlight shell %}
+{{ include.text }}
+{% endhighlight %}
+
+{% when 'powershell' %}
+{% highlight powershell %}
+{{ include.text }}
+{% endhighlight %}
+
+{% when 'typescript' %}
+{% highlight typescript %}
+{{ include.text }}
+{% endhighlight %}
+
+{% endcase %}

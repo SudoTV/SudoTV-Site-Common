@@ -2,7 +2,7 @@
 
 {% capture file-text %}
 
-{% include_relative {{ include.file }} %}
+{{ include.text }}
 
 {% endcapture %}
 
@@ -79,9 +79,9 @@
 {% endif %}
 
 <div class="copyable-code-container">
-    {% include highlight.html
+    {% include text-highlight.html
         language=include.language
-        file=include.file
+        text=file-text
     %}
     <button class="copyable-code-button">
     </button>
