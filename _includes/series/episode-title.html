@@ -18,6 +18,11 @@
 
 {% endif %}
 
-<h1>
-    {{ include.series.episodes[include.episode-id].localization[localization].title }}
-</h1>
+<div class="episode-title">
+    <h1 class="episode-title-h1">
+        {{ include.series.episodes[include.episode-id].localization[localization].title }}
+    </h1>
+    <span>
+        {{ include.series.localization[localization].title }}
+    </span>
+</div>
