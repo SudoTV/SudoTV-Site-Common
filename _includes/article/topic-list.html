@@ -5,7 +5,11 @@
     {% assign topicKey=topic[0] %}
     {% assign topicValue=topic[1] %}
 
+    {% if topicKey != 'docs' %}
+
     {% include article/topic-link.html topic=topicValue %}
+
+    {% endif %}
 
     {% endfor %}
 </ul>
