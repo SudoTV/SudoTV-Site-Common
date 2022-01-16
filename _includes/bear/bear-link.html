@@ -60,15 +60,6 @@
 
 {% endcapture %}
 
-{% capture play-link %}
-
-{% assign latestSeries=include.series.episodes[include.series.latest-episode] %}
-{% include series/play-link.html
-    episode=latestSeries
-%}
-
-{% endcapture %}
-
 {% if page.localization == "en-US" %}
 
 {% capture detail-link %}
@@ -82,10 +73,6 @@
     | append: include.series.latest-episode
     | append: ": "
     | append: detail-link
-%}
-
-{% assign 
-    link-text=play-link
 %}
 
 {% elsif page.localization == "zh-CN" %}
@@ -102,3 +89,5 @@
     | append: " 集 -"
     | append: detail-link
 %}
+
+{% endif %}
