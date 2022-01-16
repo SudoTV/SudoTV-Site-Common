@@ -1,0 +1,58 @@
+{% assign localization=page.localization %}
+
+{% assign episode=include.series.episodes[include.series.latest-episode] %}
+
+{% if page.localization == "en-US" %}
+
+<h2>
+    Latest Update
+</h2>
+
+{% elsif page.localization == "zh-CN" %}
+
+<h2>
+    最近更新
+</h2>
+
+{% endif %}
+
+{% capture pre %}
+
+{% if localization == "en-US" %}
+
+Latest - Episode {{ include.series.latest-episode }}
+
+{% elsif localization == "zh-CN" %}
+
+最新 - 第 {{ include.series.latest-episode }} 集
+
+{% endif %}
+
+{% endcapture %}
+
+{% capture description %}
+
+{% if localization == "en-US" %}
+
+Updated -
+
+{% elsif localization == "zh-CN" %}
+
+更新于 -
+
+{% endif %}
+
+{% include localization/date.html
+    date=episode.release-date
+%}
+
+{% endcapture %}
+
+{% assign title=episode.localization[localization].title %}
+
+{% include navigation/core-link.html
+    pre=pre
+    href=include.series.latest-episode
+    title=title
+    description=description
+%}
