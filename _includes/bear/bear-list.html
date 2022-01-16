@@ -1,0 +1,19 @@
+{% assign localization=page.localization %}
+
+{% assign sorted-list=include.series-list %}
+
+<ul class="series-list-ul">
+    {% for series in sorted-list %}
+
+    {% assign seriesKey=series[0] %}
+    {% assign seriesValue=series[1] %}
+
+    <li class="series-list-li">
+        {% include bear/bear-link.html
+            href=seriesKey
+            series=seriesValue
+        %}
+    </li>
+
+    {% endfor %}
+</ul>
