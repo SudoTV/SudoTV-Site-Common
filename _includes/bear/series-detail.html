@@ -1,3 +1,5 @@
+{% assign localization=page.localization %}
+
 {% if include.dependency0 %}
 
 {% include banner/dependencies/series.html
@@ -38,6 +40,74 @@
 %}
 
 {% endif %}
+
+{% if page.localization == "en-US" %}
+
+<h2>
+    Bear
+</h2>
+
+{% elsif page.localization == "zh-CN" %}
+
+<h2>
+    熊吉
+</h2>
+
+{% endif %}
+
+{% if page.localization == "en-US" %}
+
+<p>
+    This site contains transcripts for SudoTV series. If you want to bear with the series content, please visit:
+</p>
+
+{% elsif page.localization == "zh-CN" %}
+
+<p>
+    本站收录 SudoTV 剧集的文字记录。如果您想跟随剧集一起编程，请访问：
+</p>
+
+{% endif %}
+
+{% if page.localization == "en-US" %}
+
+{% assign title=
+    include.series.localization[localization].title
+    | append: " - SudoTV Series"
+%}
+{% assign description=
+    "In SudoTV Series, view "
+    | append: include.series.localization[localization].title
+%}
+{% assign href=
+    "https://series.sudo.tv/"
+    | append: include.series.name
+%}
+
+{% elsif page.localization == "zh-CN" %}
+
+{% assign title=
+    include.series.localization[localization].title
+    | append: " - SudoTV 剧集"
+%}
+{% assign description=
+    "在 SudoTV 剧集中查看"
+    | append: include.series.localization[localization].title
+%}
+{% assign href=
+    "https://series.sudo.tv/"
+    | append: include.series.name
+%}
+
+{% endif %}
+
+{% include navigation/absolute-link.html
+    with-origin=true
+    external=true
+    href=href
+    title=title
+    description=description
+%}
 
 {% include bear/series-episode-list.html
     series=include.series
