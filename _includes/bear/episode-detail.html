@@ -1,0 +1,21 @@
+{% if include.dependency0 %}
+
+{% include banner/dependencies/episode.html
+    dependency0=include.dependency0
+    dependency1=include.dependency1
+    dependency2=include.dependency2
+    dependency3=include.dependency3
+    dependency4=include.dependency4
+    dependency5=include.dependency5
+    dependency6=include.dependency6
+    dependency7=include.dependency7
+    dependency8=include.dependency8
+    dependency9=include.dependency9
+%}
+
+{% endif %}
+
+{% include series/episode-title.html
+    series=include.series
+    episode-id=include.episode-id
+%}

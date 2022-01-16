@@ -1,0 +1,13 @@
+{% assign localization=page.localization %}
+
+<p>
+    {% if localization == "en-US" %}
+
+    There's no transcript available for this episode yet.
+
+    {% elsif localization == "zh-CN" %}
+
+    本集暂时没有文本记录。
+
+    {% endif %}
+</p>
