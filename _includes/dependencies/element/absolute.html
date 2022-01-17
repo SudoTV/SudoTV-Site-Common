@@ -1,0 +1,7 @@
+{% assign localization=page.localization %}
+
+<li>
+    <a href="{{ include.href }}" title="{{ include.dependency.localization[localization].description }}">
+        {{ include.dependency.localization[localization].name }}
+    </a>
+</li>

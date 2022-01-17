@@ -1,0 +1,51 @@
+{% include series/episode-title.html
+    prepare=true
+    series=include.series
+    episode-id=include.episode-id
+%}
+
+{% if include.dependency0 %}
+
+<h2>
+    {% if page.localization == "en-US" %}
+
+    Food for thought
+
+    {% elsif page.localization == "zh-CN" %}
+
+    深思熟虑
+
+    {% endif %}
+</h2>
+
+{% include dependencies/episode.html
+    dependency0=include.dependency0
+    dependency1=include.dependency1
+    dependency2=include.dependency2
+    dependency3=include.dependency3
+    dependency4=include.dependency4
+    dependency5=include.dependency5
+    dependency6=include.dependency6
+    dependency7=include.dependency7
+    dependency8=include.dependency8
+    dependency9=include.dependency9
+%}
+
+{% endif %}
+
+<h2>
+    {% if localization == "en-US" %}
+
+    Prepare Environment
+
+    {% elsif localization == "zh-CN" %}
+
+    准备环境
+
+    {% endif %}
+</h2>
+
+{% include series/episode-clone.html
+    series=include.series
+    episode-id=include.episode-id
+%}

@@ -23,6 +23,30 @@
         {{ include.series.episodes[include.episode-id].localization[localization].title }}
     </h1>
     <span>
+        {% if include.prepare %}
+        {% if page.localization == "en-US" %}
+
+        <strong>Prepare Environment</strong>
+
+        {% elsif page.localization == "zh-CN" %}
+
+        <strong>准备环境</strong>
+
+        {% endif %}
+        {% endif %}
+
+        {% if include.practice %}
+        {% if page.localization == "en-US" %}
+
+        <strong>Practice</strong>
+
+        {% elsif page.localization == "zh-CN" %}
+
+        <strong>练习</strong>
+
+        {% endif %}
+        {% endif %}
+
         {% if page.localization == "en-US" %}
 
         {{ include.series.localization[localization].title }} - Episode {{ include.episode-id }}
