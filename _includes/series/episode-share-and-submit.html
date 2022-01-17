@@ -13,20 +13,37 @@
 <p>
     {% if localization == "en-US" %}
 
-    If you have already cloned the workspace of
-    <em>{{ include.series.localization[localization].title }}</em> series of your fork, and synced to get the fork
-    updated. Under the workspace folder:
+    Before you commit and push your changes. You need to have your git tool configured and authenticated. If you haven't
+    done so, visit <a data-origin="{{ site.application_name }}" href="https://resource.sudo.tv/topic/git">Git Topic</a>
+    to learn more.
 
     {% elsif localization == "zh-CN" %}
 
-    如果您已经克隆了您复刻的 <em>{{ include.series.localization[localization].title }}</em> 剧集的工作区，并已经完成了同步。在工作区文件夹下：
+    在您提交和推送您的更改之前。您需要把 Git 工具配置好并完成认证。如果您还没有准备好，请访问 <a data-origin="{{ site.application_name }}"
+        href="https://resource.sudo.tv/topic/git">有关 Git 的主题</a> 来了解更多。
 
     {% endif %}
 </p>
 
-{% capture already-text %}
+<p>
+    {% if localization == "en-US" %}
 
-git checkout tags/{{ target-tag }}
+    After you finish your practice task, you can share and submit your work to our community. To do so, you need to
+    first commit and push your change to your fork repository of
+    <em>{{ include.series.localization[localization].title }}</em> series. Under the workspace folder:
+
+    {% elsif localization == "zh-CN" %}
+
+    在完成了您的练习任务后，您可以将成品提交到社区以和其他人分享。首先，您需要将您的更改提交并推送到您 <em>{{ include.series.localization[localization].title }}</em>
+    剧集的复刻仓库中。在工作文件夹中：
+
+    {% endif %}
+</p>
+
+{% capture push-and-commit-text %}
+
+git commit -a -m "complete practice task of episode {{ include.episode-id }}"
+git push --set-upstream origin practice-episode-{{ include.episode-id }}
 
 {% endcapture %}
 
@@ -34,31 +51,45 @@ git checkout tags/{{ target-tag }}
     no-dynamic-warning=true
     shell="any-terminal"
     language="shell"
-    text=already-text
+    text=push-and-commit-text
 %}
 
 <p>
     {% if localization == "en-US" %}
 
-    If you never clone any work environment of <em>{{ include.series.localization[localization].title }}</em> series.
-    Under the folder you want to clone the work environment:
+    After code pushing, you can view your work in your Github fork repository at
+    <code>{{ include.series.fork-repository-url }}/tree/practice-episode-{{ include.episode-id }}</code>. Same, you will
+    need to replace <code>&lt;YOUR-GITHUB-USERNAME></code> with your GitHub username.
 
     {% elsif localization == "zh-CN" %}
 
-    如果您从未克隆过任何一个 <em>{{ include.series.localization[localization].title }}</em> 剧集的工作环境。在您想克隆工作环境的文件夹下
+    当您推送代码后，您可以在您的 GitHub 复刻仓库中查看您的代码。地址为
+    <code>{{ include.series.fork-repository-url }}/tree/practice-episode-{{ include.episode-id }}</code>。同样，您需要将地址中的
+    <code>&lt;YOUR-GITHUB-USERNAME></code> 替换为您的 GitHub 用户名。
 
     {% endif %}
 </p>
 
-{% capture new-text %}
+<p>
+    {% if localization == "en-US" %}
 
-git clone {{ include.series.fork-url.https }} --branch {{ target-tag }}
+    That's it! Now you can share your work with the community and discuss it with other viewers of this series. Go to
+    this <a href="{{ include.series.episodes[include.episode-id].practice-discussion-url }}">
+        Episode {{ include.episode-id }} Practice Task Sharing Conversation
+    </a>
+    to share your result and talk about others result. Also, we encourage you to check out the <a
+        href="{{ include.series.discussion-url }}">
+        {{ include.series.localization[localization].title }} Discussion Board
+    </a> to talk about anything related to this series.
 
-{% endcapture %}
+    {% elsif localization == "zh-CN" %}
 
-{% include copyable/copyable-text-highlight.html
-    no-dynamic-warning=true
-    shell="any-terminal"
-    language="shell"
-    text=new-text
-%}
+    完成了！现在您可以将您的成品分享到社区，并与其他观众一起讨论。访问这个 <a
+        href="{{ include.series.episodes[include.episode-id].practice-discussion-url }}">
+        第 {{ include.episode-id }} 集练习任务分享贴
+    </a> 与其他剧集观众一起分享和讨论。并且，我们欢迎您在 <a href="{{ include.series.discussion-url }}">
+        {{ include.series.localization[localization].title }} 讨论区
+    </a> 讨论任何有关本剧集的内容。
+
+    {% endif %}
+</p>
