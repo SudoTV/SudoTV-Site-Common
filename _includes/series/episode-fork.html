@@ -1,26 +1,15 @@
 {% assign localization=page.localization %}
 
-<h2>
-    {% if localization == "en-US" %}
-
-    Fork Repository
-
-    {% elsif localization == "zh-CN" %}
-
-    仓库分支
-
-    {% endif %}
-</h2>
-
 <p>
     {% if localization == "en-US" %}
 
-    If you have already forked the {{ include.series.localization[localization].title }} repository, you can skip this
+    If you have already forked the <strong>{{ include.series.localization[localization].title }}</strong> repository,
+    you can skip this
     part.
 
     {% elsif localization == "zh-CN" %}
 
-    如果您已经有了 {{ include.series.localization[localization].title }} 代码仓库的分支，您可以跳过这一部分。
+    如果您已经有了 <strong>{{ include.series.localization[localization].title }}</strong> 代码仓库的复刻，您可以跳过这一部分。
 
     {% endif %}
 </p>
@@ -28,16 +17,18 @@
 <p>
     {% if localization == "en-US" %}
 
-    To fork, visit <a href="{{ include.series.repository-url }}">
+    To fork, visit the <a href="{{ include.series.repository-url }}">
         {{ include.series.localization[localization].title }} Github Repository
-    </a>. Click `Fork` button on the top right corner. You may need to sign-in or create a Github account
+    </a>. Click
+    <code>Fork</code> button on the top right corner. You may need to sign-in or create a Github account
     if you don't have one already.
 
     {% elsif localization == "zh-CN" %}
 
-    为了创建分支，您需要访问 <a href="{{ include.series.repository-url }}">
+    为了创建复刻，您需要访问 <a href="{{ include.series.repository-url }}">
         {{ include.series.localization[localization].title }} Github 仓库
-    </a>。点击右上角的 `Fork` 按钮。如果您没有登陆，您可能需要登陆。如果您没有 Github 账号，您需要创建一个 Github 账号。
+    </a>。点击右上角的
+    <code>Fork</code> 按钮。如果您没有登陆，您可能需要登陆。如果您没有 Github 账号，您需要创建一个 Github 账号。
 
     {% endif %}
 </p>

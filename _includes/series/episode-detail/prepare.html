@@ -36,16 +36,16 @@
 <h2>
     {% if localization == "en-US" %}
 
-    Prepare Environment
+    Fork Repository
 
     {% elsif localization == "zh-CN" %}
 
-    准备环境
+    仓库复刻
 
     {% endif %}
 </h2>
 
-{% include series/episode-clone.html
+{% include series/episode-fork.html
     target-tag="before"
     series=include.series
     episode-id=include.episode-id
