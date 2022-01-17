@@ -58,6 +58,10 @@
 
         {% endif %}
 
+        {% if include.no-dynamic-warning %}
+
+        {% else %}
+
         {% if file-text contains "://" %}
 
         {% if page.localization == "en-US" %}
@@ -69,6 +73,8 @@
         {% elsif page.localization == "zh-CN" %}
 
         此代码片段包含且使用了动态内容。请在运行前检查所有动态内容以保证安全。我们严肃的看待安全性并已经确认了它们是安全的，但是你总是应该在运行之前检查任何你不熟悉的内容的安全性。
+
+        {% endif %}
 
         {% endif %}
 

@@ -30,6 +30,7 @@ git checkout tags/{{ target-tag }}
 {% endcapture %}
 
 {% include copyable/copyable-text-highlight.html
+    no-dynamic-warning=true
     shell="any-terminal"
     language="shell"
     text=already-text
@@ -55,6 +56,7 @@ git clone {{ include.series.clone-url.https }} --branch {{ target-tag }}
 {% endcapture %}
 
 {% include copyable/copyable-text-highlight.html
+    no-dynamic-warning=true
     shell="any-terminal"
     language="shell"
     text=new-text

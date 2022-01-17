@@ -29,14 +29,14 @@
         {{ include.series.localization[localization].title }} Github Repository
     </a>. Click
     <code>Fork</code> button on the top right corner. You may need to sign-in or create a Github account
-    if you don't have one already.
+    if you don't have one already. A new fork is already updated, you don't to need to sync a fork that just created.
 
     {% elsif localization == "zh-CN" %}
 
     为了创建新的复刻，您需要访问 <a href="{{ include.series.repository-url }}">
         {{ include.series.localization[localization].title }} Github 仓库
     </a>。点击右上角的
-    <code>Fork</code> 按钮。如果您没有登陆，您可能需要登陆。如果您没有 Github 账号，您需要创建一个 Github 账号。
+    <code>Fork</code> 按钮。如果您没有登陆，您可能需要登陆。如果您没有 Github 账号，您需要创建一个 Github 账号。新的复刻一定是同步更新过的，您不需要同步一个新创建的复刻。
 
     {% endif %}
 </p>
