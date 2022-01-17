@@ -1,0 +1,53 @@
+{% if page.localization == "en-US" %}
+
+<h2>
+    Hands-on
+</h2>
+
+{% elsif page.localization == "zh-CN" %}
+
+<h2>
+    亲自上手
+</h2>
+
+{% endif %}
+
+{% if page.localization == "en-US" %}
+
+{% include navigation/core-link.html
+    href="prepare"
+    title="Prepare Environment"
+    description="Learn how to prepare work environment for this episode"
+%}
+
+{% elsif page.localization == "zh-CN" %}
+
+{% include navigation/core-link.html
+    href="prepare"
+    title="准备环境"
+    description="了解如何准备本集需要的工作环境"
+%}
+
+{% endif %}
+
+{% if include.series.episodes[include.episode-id].practice %}
+
+{% if page.localization == "en-US" %}
+
+{% include navigation/core-link.html
+    href="practice"
+    title="Practice"
+    description="Practice for a deeper understanding of this episode content"
+%}
+
+{% elsif page.localization == "zh-CN" %}
+
+{% include navigation/core-link.html
+    href="practice"
+    title="练习"
+    description="了解适合深入了解本集的内容的练习"
+%}
+
+{% endif %}
+
+{% endif %}

@@ -1,0 +1,61 @@
+{% if page.localization == "en-US" %}
+
+<h2>
+    Transcript
+</h2>
+
+{% elsif page.localization == "zh-CN" %}
+
+<h2>
+    文字记录
+</h2>
+
+{% endif %}
+
+{% assign href=
+    "https://bear.sudo.tv/"
+    | append: include.series.name
+    | append: "/"
+    | append: include.episode-id
+%}
+
+{% if page.localization == "en-US" %}
+
+{% assign title=
+    include.series.localization[localization].title
+    | append: " - Episode"
+    | append: include.episode-id
+    | append: " - SudoTV Bear"
+%}
+{% assign description=
+    "In SudoTV Bear, view transcript of episode"
+    | append: include.episode-id
+    | append: " of "
+    | append: include.series.localization[localization].title
+%}
+
+{% elsif page.localization == "zh-CN" %}
+
+{% assign title=
+    include.series.localization[localization].title
+    | append: " - 第"
+    | append: include.episode-id
+    | append: "集 - SudoTV 熊吉"
+%}
+{% assign description=
+    "在 SudoTV 熊吉中查看"
+    | append: include.series.localization[localization].title
+    | append: "的第"
+    | append: include.episode-id
+    | append: "集的文字记录"
+%}
+
+{% endif %}
+
+{% include navigation/absolute-link.html
+    with-origin=true
+    external=true
+    href=href
+    title=title
+    description=description
+%}
