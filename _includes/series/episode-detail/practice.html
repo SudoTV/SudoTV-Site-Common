@@ -35,3 +35,15 @@
 </h2>
 
 {{ include.practice-task }}
+
+<h2>
+    {% if localization == "en-US" %}
+
+    Share and Submit the Outcome
+
+    {% elsif localization == "zh-CN" %}
+
+    分享及提交结果
+
+    {% endif %}
+</h2>
