@@ -1,0 +1,22 @@
+{% include series/episode-title.html
+    practice=true
+    series=include.series
+    episode-id=include.episode-id
+%}
+
+<h2>
+    {% if localization == "en-US" %}
+
+    Practice
+
+    {% elsif localization == "zh-CN" %}
+
+    练习
+
+    {% endif %}
+</h2>
+
+{% include series/episode-clone.html
+    series=include.series
+    episode-id=include.episode-id
+%}
