@@ -54,6 +54,10 @@ Updated -
     episode=episode
 %}
 
+{% include series/transcript-link.html
+    episode=episode
+%}
+
 {% endcapture %}
 
 {% assign title=episode.localization[localization].title %}

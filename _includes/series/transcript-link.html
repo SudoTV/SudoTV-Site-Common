@@ -3,7 +3,7 @@
 {% assign localization=page.localization %}
 
 <a class="episode-link-extra-link" href="{{ include.episode.video-url[localization].url }}">
-    <i class="fa fa-play fa-fw" aria-hidden="true"></i>Play Video
+    <i class="fa fa-font fa-fw" aria-hidden="true"></i>View Transcript
 </a>
 
 {% if include.episode.video-url[localization].actual-language %}
@@ -23,7 +23,7 @@ in Simplified Chinese
 {% elsif page.localization == "zh-CN" %}
 
 <a class="episode-link-extra-link" href="{{ include.episode.video-url[localization].url }}">
-    <i class="fa fa-play fa-fw" aria-hidden="true"></i>播放视频
+    <i class="fa fa-font fa-fw" aria-hidden="true"></i>查看文字记录
 </a>
 
 {% if include.episode.video-url[localization].actual-language %}

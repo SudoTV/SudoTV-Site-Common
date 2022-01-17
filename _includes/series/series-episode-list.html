@@ -50,6 +50,10 @@
         episode=episodeValue
     %}
 
+    {% include series/transcript-link.html
+        episode=episodeValue
+    %}
+
     {% endcapture %}
 
     {% assign title=episodeValue.localization[localization].title %}
