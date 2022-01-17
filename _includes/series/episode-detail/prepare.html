@@ -40,12 +40,29 @@
 
     {% elsif localization == "zh-CN" %}
 
-    仓库复刻
+    复刻仓库
 
     {% endif %}
 </h2>
 
 {% include series/episode-fork.html
+    series=include.series
+    episode-id=include.episode-id
+%}
+
+<h2>
+    {% if localization == "en-US" %}
+
+    Prepare Workspace
+
+    {% elsif localization == "zh-CN" %}
+
+    准备工作区
+
+    {% endif %}
+</h2>
+
+{% include series/episode-clone-fork.html
     target-tag="before"
     series=include.series
     episode-id=include.episode-id
