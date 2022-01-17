@@ -1,0 +1,61 @@
+{% assign localization=page.localization %}
+
+{% if include.target-tag == "before" %}
+
+{% assign target-tag=include.series.episodes[include.episode-id].git.before-tag %}
+
+{% elsif include.target-tag == "after" %}
+
+{% assign target-tag=include.series.episodes[include.episode-id].git.after-tag %}
+
+{% endif %}
+
+<p>
+    {% if localization == "en-US" %}
+
+    If you have already cloned the work environment of
+    <em>{{ include.series.localization[localization].title }}</em> series. Under the work environment folder:
+
+    {% elsif localization == "zh-CN" %}
+
+    如果您已经克隆了 <em>{{ include.series.localization[localization].title }}</em> 剧集的工作环境。在工作环境文件夹下：
+
+    {% endif %}
+</p>
+
+{% capture already-text %}
+
+git checkout tags/{{ target-tag }}
+
+{% endcapture %}
+
+{% include copyable/copyable-text-highlight.html
+    shell="any-terminal"
+    language="shell"
+    text=already-text
+%}
+
+<p>
+    {% if localization == "en-US" %}
+
+    If you never clone any work environment of <em>{{ include.series.localization[localization].title }}</em> series.
+    Under the folder you want to clone the work environment:
+
+    {% elsif localization == "zh-CN" %}
+
+    如果您从未克隆过任何一个 <em>{{ include.series.localization[localization].title }}</em> 剧集的工作环境。在您想克隆工作环境的文件夹下
+
+    {% endif %}
+</p>
+
+{% capture new-text %}
+
+git clone {{ include.series.clone-url.https }} --branch {{ target-tag }}
+
+{% endcapture %}
+
+{% include copyable/copyable-text-highlight.html
+    shell="any-terminal"
+    language="shell"
+    text=new-text
+%}
