@@ -52,15 +52,15 @@
 
         {% endif %}
 
+        {% if include.no-dynamic-warning %}
+
+        {% else %}
+
         {% if include.shell and file-text contains "://" %}
 
         <br>
 
         {% endif %}
-
-        {% if include.no-dynamic-warning %}
-
-        {% else %}
 
         {% if file-text contains "://" %}
 
@@ -79,6 +79,36 @@
         {% endif %}
 
         {% endif %}
+
+        {% assign replaces = include.replaces | split: "," %}
+
+        {% for replace in replaces %}
+
+        {% if forloop.first %}
+        <br>
+        {% endif %}
+
+        {% assign replaceElements = replace | split: ":" %}
+        {% assign replaceKey = replaceElements[0] %}
+        {% assign replaceValue = replaceElements[1] %}
+
+        {% if page.localization == "en-US" %}
+
+        Replace <code>
+            &lt;{{ replaceKey }}>
+        </code> with <em>{{ replaceValue }}</em>
+
+        {% elsif page.localization == "zh-CN" %}
+
+        将 <code>&lt;{{ replaceKey }}></code> 替换为 <em>{{ replaceValue }}</em>
+
+        {% endif %}
+
+        {% if forloop.last == false %}
+        <br>
+        {% endif %}
+
+        {% endfor %}
     </p>
 </blockquote>
 

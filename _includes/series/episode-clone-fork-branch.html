@@ -45,7 +45,7 @@ git checkout -b practice-episode-{{ include.episode-id }} tags/{{ target-tag }}
 
     {% elsif localization == "zh-CN" %}
 
-    如果您从未克隆过任何一个 <em>{{ include.series.localization[localization].title }}</em> 剧集的工作环境。在您想克隆工作环境的文件夹下
+    如果您从未克隆过任何一个 <em>{{ include.series.localization[localization].title }}</em> 剧集的工作环境。在您想克隆工作环境的文件夹下：
 
     {% endif %}
 </p>
@@ -57,7 +57,18 @@ git checkout -b practice-episode-{{ include.episode-id }}
 
 {% endcapture %}
 
+{% if localization == "en-US" %}
+
+{% assign replaces="YOUR-GITHUB-USERNAME:your github username" %}
+
+{% elsif localization == "zh-CN" %}
+
+{% assign replaces="YOUR-GITHUB-USERNAME:您的 Github 用户名" %}
+
+{% endif %}
+
 {% include copyable/copyable-text-highlight.html
+    replaces=replaces
     no-dynamic-warning=true
     shell="any-terminal"
     language="shell"
