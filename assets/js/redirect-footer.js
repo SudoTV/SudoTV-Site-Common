@@ -9,11 +9,11 @@
             event.preventDefault();
 
             if (link.dataset.origin === 'SudoTV') {
-                window.location.href = link.href;
+                window.location.replace(link.href);
                 return;
             }
 
-            window.location.href = `${link.href}?origin=${link.dataset.origin}`;
+            window.location.replace(`${link.href}?origin=${link.dataset.origin}`);
         });
     }
 })();

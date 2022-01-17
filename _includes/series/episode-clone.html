@@ -1,5 +1,15 @@
 {% assign localization=page.localization %}
 
+{% if include.target-tag == "before" %}
+
+{% assign target-tag=include.series.episodes[include.episode-id].git.before-tag %}
+
+{% elsif include.target-tag == "after" %}
+
+{% assign target-tag=include.series.episodes[include.episode-id].git.after-tag %}
+
+{% endif %}
+
 <p>
     {% if localization == "en-US" %}
 
@@ -15,7 +25,7 @@
 
 {% capture already-text %}
 
-git checkout tags/{{ include.series.episodes[include.episode-id].git.before-tag }}
+git checkout tags/{{ target-tag }}
 
 {% endcapture %}
 
@@ -40,7 +50,7 @@ git checkout tags/{{ include.series.episodes[include.episode-id].git.before-tag 
 
 {% capture new-text %}
 
-git clone {{ include.series.clone-url.https }} --branch {{ include.series.episodes[include.episode-id].git.before-tag }}
+git clone {{ include.series.clone-url.https }} --branch {{ target-tag }}
 
 {% endcapture %}
 

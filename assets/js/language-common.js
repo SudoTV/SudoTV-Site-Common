@@ -34,6 +34,6 @@ const setLanguage = (language) => {
     if (availableLanguages.some((each) => {
         return path.startsWith(`/${each}`);
     })) {
-        window.location.href = `/${language}${path.substring(6)}${window.location.search}`;
+        window.location.replace(`/${language}${path.substring(6)}${window.location.search}`);
     }
 };
