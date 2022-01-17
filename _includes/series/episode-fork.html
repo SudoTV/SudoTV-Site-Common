@@ -5,11 +5,19 @@
 
     If you have already forked the <strong>{{ include.series.localization[localization].title }}</strong> repository,
     you can skip this
-    part.
+    part. However, if your fork is created a while before, you might need to sync the upstream to get your fork updated
+    first. Visit <a data-origin="{{ site.application_name }}" href="https://resource.sudo.tv/topic/sync-github-fork">
+        Sync Github Fork Topic
+    </a> to learn
+    more.
 
     {% elsif localization == "zh-CN" %}
 
-    如果您已经有了 <strong>{{ include.series.localization[localization].title }}</strong> 代码仓库的复刻，您可以跳过这一部分。
+    如果您已经有了 <strong>{{ include.series.localization[localization].title }}</strong>
+    代码仓库的复刻，您可以跳过这一部分。但是，如果您的复刻是一段时间之前创建的，您可能需要先同步您的复刻。访问 <a data-origin="{{ site.application_name }}"
+        href="https://resource.sudo.tv/topic/sync-github-fork">
+        同步 Github 复刻主题
+    </a>来了解更多。
 
     {% endif %}
 </p>
@@ -17,7 +25,7 @@
 <p>
     {% if localization == "en-US" %}
 
-    To fork, visit the <a href="{{ include.series.repository-url }}">
+    To create a new fork, visit the <a href="{{ include.series.repository-url }}">
         {{ include.series.localization[localization].title }} Github Repository
     </a>. Click
     <code>Fork</code> button on the top right corner. You may need to sign-in or create a Github account
@@ -25,7 +33,7 @@
 
     {% elsif localization == "zh-CN" %}
 
-    为了创建复刻，您需要访问 <a href="{{ include.series.repository-url }}">
+    为了创建新的复刻，您需要访问 <a href="{{ include.series.repository-url }}">
         {{ include.series.localization[localization].title }} Github 仓库
     </a>。点击右上角的
     <code>Fork</code> 按钮。如果您没有登陆，您可能需要登陆。如果您没有 Github 账号，您需要创建一个 Github 账号。
