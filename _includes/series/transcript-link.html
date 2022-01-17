@@ -2,7 +2,10 @@
 
 {% assign localization=page.localization %}
 
-<a class="episode-link-extra-link" href="{{ include.episode.video-url[localization].url }}">
+<a
+    class="episode-link-extra-link"
+    href="https://bear.sudo.tv/{{ include.series.name }}/{{ include.episode-id }}"
+>
     <i class="fa fa-font fa-fw" aria-hidden="true"></i>View Transcript
 </a>
 
@@ -22,7 +25,10 @@ in Simplified Chinese
 
 {% elsif page.localization == "zh-CN" %}
 
-<a class="episode-link-extra-link" href="{{ include.episode.video-url[localization].url }}">
+<a
+    class="episode-link-extra-link"
+    href="https://bear.sudo.tv/{{ include.series.name }}/{{ include.episode-id }}"
+>
     <i class="fa fa-font fa-fw" aria-hidden="true"></i>查看文字记录
 </a>
 

@@ -55,7 +55,8 @@ Updated -
 %}
 
 {% include series/transcript-link.html
-    episode=episode
+    series=include.series
+    episode-id=include.series.latest-episode
 %}
 
 {% endcapture %}

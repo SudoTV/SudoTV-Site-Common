@@ -51,7 +51,8 @@
     %}
 
     {% include series/transcript-link.html
-        episode=episodeValue
+        series=include.series
+        episode-id=episodeKey
     %}
 
     {% endcapture %}
