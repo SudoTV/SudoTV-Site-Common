@@ -1,0 +1,71 @@
+{% assign localization=page.localization %}
+
+<div class="site-banner">
+    <div class="site-banner-text">
+        <div>
+            {% if page.localization == "en-US" %}
+
+            To fully understand the content of this episode, viewers should have already has knowledge or go through the
+            following
+            topics:
+
+            {% elsif page.localization == "zh-CN" %}
+
+            为了完全理解本集内容，观看者需要先了解过或具备以下主题的知识：
+
+            {% endif %}
+        </div>
+        <div>
+            {% if include.dependency0 %}
+            {% include banner/dependencies/cross-site-resource-element.html
+                dependency=include.dependency0
+            %}
+            {% endif %}
+            {% if include.dependency1 %}
+            {% include banner/dependencies/cross-site-resource-element.html
+                dependency=include.dependency1
+            %}
+            {% endif %}
+            {% if include.dependency2 %}
+            {% include banner/dependencies/cross-site-resource-element.html
+                dependency=include.dependency2
+            %}
+            {% endif %}
+            {% if include.dependency3 %}
+            {% include banner/dependencies/cross-site-resource-element.html
+                dependency=include.dependency3
+            %}
+            {% endif %}
+            {% if include.dependency4 %}
+            {% include banner/dependencies/cross-site-resource-element.html
+                dependency=include.dependency4
+            %}
+            {% endif %}
+            {% if include.dependency5 %}
+            {% include banner/dependencies/cross-site-resource-element.html
+                dependency=include.dependency5
+            %}
+            {% endif %}
+            {% if include.dependency6 %}
+            {% include banner/dependencies/cross-site-resource-element.html
+                dependency=include.dependency6
+            %}
+            {% endif %}
+            {% if include.dependency7 %}
+            {% include banner/dependencies/cross-site-resource-element.html
+                dependency=include.dependency7
+            %}
+            {% endif %}
+            {% if include.dependency8 %}
+            {% include banner/dependencies/cross-site-resource-element.html
+                dependency=include.dependency8
+            %}
+            {% endif %}
+            {% if include.dependency9 %}
+            {% include banner/dependencies/cross-site-resource-element.html
+                dependency=include.dependency9
+            %}
+            {% endif %}
+        </div>
+    </div>
+</div>
