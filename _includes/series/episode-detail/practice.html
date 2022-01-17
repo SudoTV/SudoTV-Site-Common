@@ -33,7 +33,20 @@
     {% endif %}
 </h2>
 
-{% include series/episode-clone-fork.html
+<p>
+    {% if localization == "en-US" %}
+
+    To start working on the practice of episode {{ include.episode-id }}, you need to create a branch for this practice
+    on your forked git repository. Don't worry, this is very easy and straight forward.
+
+    {% elsif localization == "zh-CN" %}
+
+    为了开始完成第 {{ include.episode-id }} 集的练习任务，您需要在您的复刻仓库中创建一个专注于这个练习任务的分支。不用担心，这个操作很直观而且非常简单。
+
+    {% endif %}
+</p>
+
+{% include series/episode-clone-fork-branch.html
     target-tag="after"
     series=include.series
     episode-id=include.episode-id
