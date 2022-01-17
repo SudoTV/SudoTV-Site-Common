@@ -40,8 +40,8 @@ git checkout tags/{{ target-tag }}
 <p>
     {% if localization == "en-US" %}
 
-    If you never clone any work environment of <em>{{ include.series.localization[localization].title }}</em> series.
-    Under the folder you want to clone the work environment:
+    If you never clone any workspace of <em>{{ include.series.localization[localization].title }}</em> series.
+    Under the folder that you want to clone the workspace:
 
     {% elsif localization == "zh-CN" %}
 
@@ -58,7 +58,7 @@ git clone {{ include.series.fork-url.https }} --branch {{ target-tag }}
 
 {% if localization == "en-US" %}
 
-{% assign replaces="YOUR-GITHUB-USERNAME:your github username" %}
+{% assign replaces="YOUR-GITHUB-USERNAME:your GitHub username" %}
 
 {% elsif localization == "zh-CN" %}
 

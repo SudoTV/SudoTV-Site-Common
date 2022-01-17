@@ -13,8 +13,8 @@
 <p>
     {% if localization == "en-US" %}
 
-    If you have already cloned the work environment of
-    <em>{{ include.series.localization[localization].title }}</em> series. Under the work environment folder:
+    If you have already cloned the workspace of
+    <em>{{ include.series.localization[localization].title }}</em> series. Under the workspace folder:
 
     {% elsif localization == "zh-CN" %}
 
@@ -39,8 +39,8 @@ git checkout tags/{{ target-tag }}
 <p>
     {% if localization == "en-US" %}
 
-    If you never clone any work environment of <em>{{ include.series.localization[localization].title }}</em> series.
-    Under the folder you want to clone the work environment:
+    If you never clone any workspace of <em>{{ include.series.localization[localization].title }}</em> series.
+    Under the folder that you want to clone the workspace:
 
     {% elsif localization == "zh-CN" %}
 

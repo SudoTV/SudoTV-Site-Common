@@ -3,13 +3,11 @@
 <p>
     {% if localization == "en-US" %}
 
-    If you have already forked the <em>{{ include.series.localization[localization].title }}</em> repository,
-    you can skip this
-    part. However, if your fork is created a while before, you might need to sync the upstream to get your fork updated
-    first. Visit <a data-origin="{{ site.application_name }}" href="https://resource.sudo.tv/topic/github">
+    If you have already forked the <em>{{ include.series.localization[localization].title }}</em> repository, you can
+    skip this part. However, if your fork is created a while before, you might need to sync the upstream to get your
+    fork updated first. Visit <a data-origin="{{ site.application_name }}" href="https://resource.sudo.tv/topic/github">
         Github Topic
-    </a> to learn
-    more.
+    </a> to learn more.
 
     {% elsif localization == "zh-CN" %}
 
@@ -28,8 +26,8 @@
     To create a new fork, visit the <a href="{{ include.series.repository-url }}">
         {{ include.series.localization[localization].title }} Github Repository
     </a>. Click
-    <code>Fork</code> button on the top right corner. You may need to sign-in or create a Github account
-    if you don't have one already. A new fork is already updated, you don't to need to sync a fork that just created.
+    <code>Fork</code> button on the top right corner. You may need to sign-in or create a Github account if you don't
+    have one already. A new fork is already updated, you don't to need to sync a fork that just created.
 
     {% elsif localization == "zh-CN" %}
 
