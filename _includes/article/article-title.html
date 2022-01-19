@@ -1,5 +1,18 @@
 {% assign localization=page.localization %}
 
+
+{% include banner/dependencies/resource.html
+    dependencies=include.article.dependencies
+%}
+
+{% if include.article.references %}
+
+{% include banner/chapter-reference.html 
+    references=include.article.references
+%}
+
+{% endif %}
+
 <h1>
     {{ include.article.localization[localization].title }}
 </h1>

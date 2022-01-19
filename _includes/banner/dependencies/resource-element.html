@@ -1,6 +1,7 @@
-{% assign href="/topic/" | append: include.dependency.path | relative_url %}
+{% assign dependency-instance=site.data.topic[include.dependency] %}
+{% assign href="/topic/" | append: dependency-instance.path | relative_url %}
 
 {% include banner/dependencies/absolute-resource-element.html
-    dependency=include.dependency
+    dependency=dependency-instance
     href=href
 %}
