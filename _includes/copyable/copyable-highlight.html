@@ -115,10 +115,12 @@
 {% endif %}
 
 <div class="copyable-code-container">
+    <div data-lang="{{ include.language }}" class="copyable-code-language">
+    </div>
     {% include highlight/highlight.html
         language=include.language
         file=include.file
     %}
-    <button class="copyable-code-button">
+    <button class="copyable-code-button" title="COPY">
     </button>
 </div>
