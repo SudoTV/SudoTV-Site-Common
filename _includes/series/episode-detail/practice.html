@@ -4,6 +4,28 @@
     episode-id=include.episode-id
 %}
 
+{% assign text-dependencies=include.series.episodes[include.episode-id].dependencies %}
+
+{% if text-dependencies %}
+
+<h2>
+    {% if page.localization == "en-US" %}
+
+    Food for thought
+
+    {% elsif page.localization == "zh-CN" %}
+
+    深思熟虑
+
+    {% endif %}
+</h2>
+
+{% include dependencies/episode.html
+    dependencies=text-dependencies
+%}
+
+{% endif %}
+
 <h2>
     {% if localization == "en-US" %}
 

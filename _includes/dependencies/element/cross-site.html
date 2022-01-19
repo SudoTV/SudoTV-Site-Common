@@ -1,6 +1,8 @@
 {% assign href="https://resource.sudo.tv/topic/" | append: include.dependency.path | append: "?origin=" | append: site.application_name | relative_url %}
 
+{% assign dependency-instance=site.data.topic[include.dependency] %}
+
 {% include dependencies/element/absolute.html
-    dependency=include.dependency
+    dependency=dependency-instance
     href=href
 %}

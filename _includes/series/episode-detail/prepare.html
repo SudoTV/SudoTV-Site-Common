@@ -4,7 +4,9 @@
     episode-id=include.episode-id
 %}
 
-{% if include.dependencies %}
+{% assign text-dependencies=include.series.episodes[include.episode-id].dependencies %}
+
+{% if text-dependencies %}
 
 <h2>
     {% if page.localization == "en-US" %}
@@ -19,7 +21,7 @@
 </h2>
 
 {% include dependencies/episode.html
-    dependencies=include.dependencies
+    dependencies=text-dependencies
 %}
 
 {% endif %}
