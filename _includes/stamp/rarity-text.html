@@ -1,0 +1,15 @@
+{% if page.localization == "en-US" %}
+
+Rarity:
+{% case include.rarity %}
+{% when 'special' %} Special
+{% endcase %}
+
+{% elsif page.localization == "zh-CN" %}
+
+稀有度：
+{% case include.rarity %}
+{% when 'special' %} 特殊
+{% endcase %}
+
+{% endif %}

@@ -1,0 +1,106 @@
+{% assign localization=page.localization %}
+
+{% if page.localization == "en-US" %}
+
+<h1>
+    Stamp - <code class="stamp-h1-code">
+        {{ include.stamp.localization[localization].label }}
+    </code>
+</h1>
+
+{% elsif page.localization == "zh-CN" %}
+
+<h1>
+    贴纸 - <code class="stamp-h1-code">
+        {{ include.stamp.localization[localization].label }}
+    </code>
+</h1>
+
+{% endif %}
+
+<blockquote>
+    {{ include.stamp.localization[localization].description }}
+</blockquote>
+
+{% if page.localization == "en-US" %}
+
+<h2>
+    Stamp Icon
+</h2>
+
+{% elsif page.localization == "zh-CN" %}
+
+<h2>
+    贴纸图标
+</h2>
+
+{% endif %}
+
+{% capture icon-border-class %}
+{% case include.stamp.rarity %}
+{% when 'special' %} stamp-icon-border-special
+{% endcase %}
+{% endcapture %}
+
+<div class="stamp-icon-vertical">
+    <div class="stamp-icon-border-outer">
+        <div class="stamp-icon-border-inner {{ icon-border-class | strip }}">
+            <img src="{{ include.stamp.icon[localization].url }}"
+                alt="{{ include.stamp.localization[localization].label }}">
+        </div>
+    </div>
+    <div>
+        {% include stamp/rarity-text.html
+            rarity=include.stamp.rarity
+        %}
+    </div>
+</div>
+
+{% if page.localization == "en-US" %}
+
+<h2>
+    Umm... Where is it sold then?
+</h2>
+
+{% elsif page.localization == "zh-CN" %}
+
+<h2>
+    那么... 在哪里能买得到呢？
+</h2>
+
+{% endif %}
+
+<blockquote>
+    {{ include.stamp.localization[localization].how-to-get }}
+</blockquote>
+
+<p class="p-no-margin">
+    {% if page.localization == "en-US" %}
+
+    Possible method of getting this stamp:
+
+    {% elsif page.localization == "zh-CN" %}
+
+    获得这个贴纸的方法：
+
+    {% endif %}
+</p>
+
+<ul>
+    {% for method in include.stamp.methods %}
+
+    <li>
+        {% case method %}
+
+        {% when 'special' %}
+        {% if page.localization == "en-US" %}
+        Assign to viewer by special event
+        {% elsif page.localization == "zh-CN" %}
+        通过特殊事件获得
+        {% endif %}
+
+        {% endcase %}
+    </li>
+
+    {% endfor %}
+</ul>

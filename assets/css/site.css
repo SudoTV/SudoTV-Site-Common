@@ -60,3 +60,8 @@ blockquote {
 
     cursor: pointer;
 }
+
+.p-no-margin {
+
+    margin: 0px;
+}
