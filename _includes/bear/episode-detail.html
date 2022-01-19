@@ -1,9 +1,11 @@
 {% assign localization=page.localization %}
 
-{% if include.dependencies %}
+{% assign text-dependencies=include.series.episodes[include.episode-id].dependencies %}
+
+{% if text-dependencies %}
 
 {% include banner/dependencies/bear-episode.html
-    dependencies=include.dependencies
+    dependencies=text-dependencies
 %}
 
 {% endif %}
