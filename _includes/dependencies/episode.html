@@ -1,5 +1,7 @@
 {% assign localization=page.localization %}
 
+{% if include.dependencies %}
+
 <p>
     {% if page.localization == "en-US" %}
 
@@ -13,64 +15,13 @@
     {% endif %}
 </p>
 <ul>
-    {% if include.dependency0 %}
-    {% include 
-        dependencies/element/cross-site.html
-        dependency=include.dependency0
+    {% for dependency in include.dependencies %}
+
+    {% include banner/dependencies/cross-site.html
+        dependency=dependency
     %}
-    {% endif %}
-    {% if include.dependency1 %}
-    {% include 
-        dependencies/element/cross-site.html
-        dependency=include.dependency1
-    %}
-    {% endif %}
-    {% if include.dependency2 %}
-    {% include 
-        dependencies/element/cross-site.html
-        dependency=include.dependency2
-    %}
-    {% endif %}
-    {% if include.dependency3 %}
-    {% include 
-        dependencies/element/cross-site.html
-        dependency=include.dependency3
-    %}
-    {% endif %}
-    {% if include.dependency4 %}
-    {% include 
-        dependencies/element/cross-site.html
-        dependency=include.dependency4
-    %}
-    {% endif %}
-    {% if include.dependency5 %}
-    {% include 
-        dependencies/element/cross-site.html
-        dependency=include.dependency5
-    %}
-    {% endif %}
-    {% if include.dependency6 %}
-    {% include 
-        dependencies/element/cross-site.html
-        dependency=include.dependency6
-    %}
-    {% endif %}
-    {% if include.dependency7 %}
-    {% include 
-        dependencies/element/cross-site.html
-        dependency=include.dependency7
-    %}
-    {% endif %}
-    {% if include.dependency8 %}
-    {% include 
-        dependencies/element/cross-site.html
-        dependency=include.dependency8
-    %}
-    {% endif %}
-    {% if include.dependency9 %}
-    {% include 
-        dependencies/element/cross-site.html
-        dependency=include.dependency9
-    %}
-    {% endif %}
+
+    {% endfor %}
 </ul>
+
+{% endif %}

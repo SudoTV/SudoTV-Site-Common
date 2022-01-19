@@ -1,5 +1,7 @@
 {% assign localization=page.localization %}
 
+{% if include.dependencies %}
+
 <div class="site-banner">
     <div class="site-banner-text">
         <div>
@@ -16,56 +18,15 @@
             {% endif %}
         </div>
         <div>
-            {% if include.dependency0 %}
+            {% for dependency in include.dependencies %}
+
             {% include banner/dependencies/cross-site-resource-element.html
-                dependency=include.dependency0
+                dependency=dependency
             %}
-            {% endif %}
-            {% if include.dependency1 %}
-            {% include banner/dependencies/cross-site-resource-element.html
-                dependency=include.dependency1
-            %}
-            {% endif %}
-            {% if include.dependency2 %}
-            {% include banner/dependencies/cross-site-resource-element.html
-                dependency=include.dependency2
-            %}
-            {% endif %}
-            {% if include.dependency3 %}
-            {% include banner/dependencies/cross-site-resource-element.html
-                dependency=include.dependency3
-            %}
-            {% endif %}
-            {% if include.dependency4 %}
-            {% include banner/dependencies/cross-site-resource-element.html
-                dependency=include.dependency4
-            %}
-            {% endif %}
-            {% if include.dependency5 %}
-            {% include banner/dependencies/cross-site-resource-element.html
-                dependency=include.dependency5
-            %}
-            {% endif %}
-            {% if include.dependency6 %}
-            {% include banner/dependencies/cross-site-resource-element.html
-                dependency=include.dependency6
-            %}
-            {% endif %}
-            {% if include.dependency7 %}
-            {% include banner/dependencies/cross-site-resource-element.html
-                dependency=include.dependency7
-            %}
-            {% endif %}
-            {% if include.dependency8 %}
-            {% include banner/dependencies/cross-site-resource-element.html
-                dependency=include.dependency8
-            %}
-            {% endif %}
-            {% if include.dependency9 %}
-            {% include banner/dependencies/cross-site-resource-element.html
-                dependency=include.dependency9
-            %}
-            {% endif %}
+
+            {% endfor %}
         </div>
     </div>
 </div>
+
+{% endif %}
