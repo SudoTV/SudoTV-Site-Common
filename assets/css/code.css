@@ -6,9 +6,14 @@ pre {
     border-right: 4px solid #4444BB;
 }
 
+figure {
+    margin: 0px;
+    padding: 0px;
+}
+
 code[data-lang] {
 
-    padding-right: 12px !important;
+    display: inline-block;
 }
 
 pre::-webkit-scrollbar {
