@@ -2,14 +2,19 @@
 
 Rarity:
 {% case include.rarity %}
+{% when 'well-known' %} Well-known
 {% when 'special' %} Special
 {% endcase %}
 
 {% elsif page.localization == "zh-CN" %}
 
-稀有度：
+{% capture rarity-text %}
 {% case include.rarity %}
+{% when 'well-known' %} 常见
 {% when 'special' %} 特殊
 {% endcase %}
+{% endcapture %}
+
+稀有度：{{ rarity-text | strip }}
 
 {% endif %}

@@ -1,6 +1,6 @@
 {% assign localization=page.localization %}
 
-{% if page.localization == "en-US" %}
+{% if localization == "en-US" %}
 
 <h1>
     Stamp - <code class="stamp-h1-code">
@@ -8,7 +8,7 @@
     </code>
 </h1>
 
-{% elsif page.localization == "zh-CN" %}
+{% elsif localization == "zh-CN" %}
 
 <h1>
     贴纸 - <code class="stamp-h1-code">
@@ -18,17 +18,17 @@
 
 {% endif %}
 
-<blockquote>
+<blockquote class="code-large-font">
     {{ include.stamp.localization[localization].description }}
 </blockquote>
 
-{% if page.localization == "en-US" %}
+{% if localization == "en-US" %}
 
 <h2>
     Stamp Icon
 </h2>
 
-{% elsif page.localization == "zh-CN" %}
+{% elsif localization == "zh-CN" %}
 
 <h2>
     贴纸图标
@@ -36,18 +36,12 @@
 
 {% endif %}
 
-{% capture icon-border-class %}
-{% case include.stamp.rarity %}
-{% when 'special' %} stamp-icon-border-special
-{% endcase %}
-{% endcapture %}
-
 <div class="stamp-icon-vertical">
     <div class="stamp-icon-border-outer">
-        <div class="stamp-icon-border-inner {{ icon-border-class | strip }}">
-            <img src="{{ include.stamp.icon[localization].url }}"
-                alt="{{ include.stamp.localization[localization].label }}">
-        </div>
+        {% include stamp/thumbnail/full.html
+            display=true
+            stamp=include.stamp
+        %}
     </div>
     <div>
         {% include stamp/rarity-text.html
@@ -56,13 +50,13 @@
     </div>
 </div>
 
-{% if page.localization == "en-US" %}
+{% if localization == "en-US" %}
 
 <h2>
     Umm... Where is it sold then?
 </h2>
 
-{% elsif page.localization == "zh-CN" %}
+{% elsif localization == "zh-CN" %}
 
 <h2>
     那么... 在哪里能买得到呢？
@@ -70,16 +64,16 @@
 
 {% endif %}
 
-<blockquote>
+<blockquote class="code-large-font">
     {{ include.stamp.localization[localization].how-to-get }}
 </blockquote>
 
 <p class="p-no-margin">
-    {% if page.localization == "en-US" %}
+    {% if localization == "en-US" %}
 
     Possible method of getting this stamp:
 
-    {% elsif page.localization == "zh-CN" %}
+    {% elsif localization == "zh-CN" %}
 
     获得这个贴纸的方法：
 
@@ -92,10 +86,24 @@
     <li>
         {% case method %}
 
+        {% when 'email' %}
+        {% if localization == "en-US" %}
+        Email <a href="mailto://stamp@sudo.tv">stamp@sudo.tv</a> to acquire this stamp
+        {% elsif localization == "zh-CN" %}
+        发送邮件到 <a href="mailto://stamp@sudo.tv">stamp@sudo.tv</a> 以获得这个贴纸
+        {% endif %}
+
+        {% when 'pull-request' %}
+        {% if localization == "en-US" %}
+        Submit a pull request to acquire this stamp
+        {% elsif localization == "zh-CN" %}
+        提交拉取请求以获得这个贴纸
+        {% endif %}
+
         {% when 'special' %}
-        {% if page.localization == "en-US" %}
+        {% if localization == "en-US" %}
         Assign to viewer by special event
-        {% elsif page.localization == "zh-CN" %}
+        {% elsif localization == "zh-CN" %}
         通过特殊事件获得
         {% endif %}
 
