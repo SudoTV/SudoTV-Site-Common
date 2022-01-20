@@ -68,47 +68,6 @@
     {{ include.stamp.localization[localization].how-to-get }}
 </blockquote>
 
-<p class="p-no-margin">
-    {% if localization == "en-US" %}
-
-    Possible method of getting this stamp:
-
-    {% elsif localization == "zh-CN" %}
-
-    获得这个贴纸的方法：
-
-    {% endif %}
-</p>
-
-<ul>
-    {% for method in include.stamp.methods %}
-
-    <li>
-        {% case method %}
-
-        {% when 'email' %}
-        {% if localization == "en-US" %}
-        Email <a href="mailto://stamp@sudo.tv">stamp@sudo.tv</a> to acquire this stamp
-        {% elsif localization == "zh-CN" %}
-        发送邮件到 <a href="mailto://stamp@sudo.tv">stamp@sudo.tv</a> 以获得这个贴纸
-        {% endif %}
-
-        {% when 'pull-request' %}
-        {% if localization == "en-US" %}
-        Submit a pull request to acquire this stamp
-        {% elsif localization == "zh-CN" %}
-        提交拉取请求以获得这个贴纸
-        {% endif %}
-
-        {% when 'special' %}
-        {% if localization == "en-US" %}
-        Assign to viewer by special event
-        {% elsif localization == "zh-CN" %}
-        通过特殊事件获得
-        {% endif %}
-
-        {% endcase %}
-    </li>
-
-    {% endfor %}
-</ul>
+{% include stamp/method-text.html
+    methods=include.stamp.methods
+%}
