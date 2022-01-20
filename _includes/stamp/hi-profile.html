@@ -1,1 +1,162 @@
 {% assign localization=page.localization %}
+
+{% if localization == "en-US" %}
+
+<h1>
+    Hi! I'm <code class="stamp-h1-code">
+        {{ include.viewer.name }}
+    </code>
+</h1>
+
+{% elsif localization == "zh-CN" %}
+
+<h1>
+    嗨，我是 <code class="stamp-h1-code">
+        {{ include.viewer.name }}
+    </code>
+</h1>
+
+{% endif %}
+
+<blockquote class="code-large-font">
+    {{ include.viewer.localization[localization].bio }}
+</blockquote>
+
+{% if localization == "en-US" %}
+
+<h2>
+    About Me
+</h2>
+
+{% elsif localization == "zh-CN" %}
+
+<h2>
+    关于我
+</h2>
+
+{% endif %}
+
+<ul class="stamp-hi-about-flex">
+    {% if include.viewer.about.bitbucket %}
+    <li>
+        <i class="fa fa-fw fa-bitbucket-square" aria-hidden="true" title="BitBucket"></i>
+        <a href="https://bitbucket.org/{{ include.viewer.about.bitbucket }}">
+            {{ include.viewer.about.bitbucket }}
+        </a>
+    </li>
+    {% endif %}
+
+    {% if include.viewer.about.email %}
+    <li>
+        <i class="fa fa-fw fa-envelope-square" aria-hidden="true" title="Email"></i>
+        <a href="mailto://{{ include.viewer.about.email }}">
+            {{ include.viewer.about.email }}
+        </a>
+    </li>
+    {% endif %}
+
+    {% if include.viewer.about.facebook %}
+    <li>
+        <i class="fa fa-fw fa-facebook-square" aria-hidden="true" title="Facebook"></i>
+        <a href="https://www.facebook.com/people/{{ include.viewer.about.facebook }}">
+            {{ include.viewer.about.facebook }}
+        </a>
+    </li>
+    {% endif %}
+
+    {% if include.viewer.about.github %}
+    <li>
+        <i class="fa fa-fw fa-github-square" aria-hidden="true" title="GitHub"></i>
+        <a href="https://github.com/{{ include.viewer.about.github }}">
+            {{ include.viewer.about.github }}
+        </a>
+    </li>
+    {% endif %}
+
+    {% if include.viewer.about.linkedin %}
+    <li>
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true" title="LinkedIn"></i>
+        <a href="https://www.linkedin.com/in/{{ include.viewer.about.linkedin }}">
+            {{ include.viewer.about.linkedin }}
+        </a>
+    </li>
+    {% endif %}
+
+    {% if include.viewer.about.snapchat %}
+    <li>
+        <i class="fa fa-fw fa-snapchat-square" aria-hidden="true" title="Snapchat"></i>
+        <a href="https://www.snapchat.com/add/{{ include.viewer.about.snapchat }}">
+            {{ include.viewer.about.snapchat }}
+        </a>
+    </li>
+    {% endif %}
+
+    {% if include.viewer.about.steam %}
+    <li>
+        <i class="fa fa-fw fa-steam-square" aria-hidden="true" title="Steam"></i>
+        <a href="https://steamcommunity.com/profiles/{{ include.viewer.about.steam }}">
+            {{ include.viewer.about.steam }}
+        </a>
+    </li>
+    {% endif %}
+
+    {% if include.viewer.about.reddit %}
+    <li>
+        <i class="fa fa-fw fa-reddit-square" aria-hidden="true" title="Reddit"></i>
+        <a href="https://www.reddit.com/user/{{ include.viewer.about.reddit }}">
+            {{ include.viewer.about.reddit }}
+        </a>
+    </li>
+    {% endif %}
+
+    {% if include.viewer.about.tumblr %}
+    <li>
+        <i class="fa fa-fw fa-tumblr-square" aria-hidden="true" title="Tumblr"></i>
+        <a href="https://{{ include.viewer.about.tumblr }}.tumblr.com/">
+            {{ include.viewer.about.tumblr }}
+        </a>
+    </li>
+    {% endif %}
+
+    {% if include.viewer.about.twitter %}
+    <li>
+        <i class="fa fa-fw fa-twitter-square" aria-hidden="true" title="Twitter"></i>
+        <a href="https://twitter.com/{{ include.viewer.about.twitter }}">
+            {{ include.viewer.about.twitter }}
+        </a>
+    </li>
+    {% endif %}
+
+    {% if include.viewer.about.website %}
+    <li>
+        <i class="fa fa-fw fa-external-link-square" aria-hidden="true" title="Website"></i>
+        <a href="{{ include.viewer.about.website }}">
+            {{ include.viewer.about.website }}
+        </a>
+    </li>
+    {% endif %}
+</ul>
+
+{% if localization == "en-US" %}
+
+<h2>
+    My Stamps
+</h2>
+
+{% elsif localization == "zh-CN" %}
+
+<h2>
+    我的贴纸
+</h2>
+
+{% endif %}
+
+<ul class="stamp-hi-flex">
+    {% for stamp in include.viewer.stamps %}
+    <li>
+        {% include stamp/thumbnail/large-text.html
+            stamp=stamp    
+        %}
+    </li>
+    {% endfor %}
+</ul>
