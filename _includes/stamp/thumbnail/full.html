@@ -1,0 +1,12 @@
+{% capture icon-border-class %}
+{% include stamp/rarity-border-class.html
+    stamp=include.stamp
+%}
+{% endcapture %}
+
+{% include stamp/thumbnail/thumbnail.html
+    display=include.display
+    size-class="stamp-icon-border-inner-full"
+    color-class=icon-border-class
+    stamp=include.stamp
+%}

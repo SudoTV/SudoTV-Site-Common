@@ -1,0 +1,15 @@
+{% if include.display %}
+
+<div class="stamp-icon-border-inner {{ include.size-class | strip }} {{ include.color-class | strip }}">
+    <img src="{{ include.stamp.icon[localization].url }}" alt="{{ include.stamp.localization[localization].label }}">
+</div>
+
+{% else %}
+
+<a data-origin="{{ site.application_name }}" href="https://stamp.sudo.tv/stamp/{{ include.stamp.identifier }}"
+    class="stamp-icon-border-inner {{ include.size-class | strip }} {{ include.color-class | strip }}"
+    title="{{ include.stamp.localization[localization].label | strip }} - {{ include.stamp.localization[localization].description | strip }}">
+    <img src="{{ include.stamp.icon[localization].url }}" alt="{{ include.stamp.localization[localization].label }}">
+</a>
+
+{% endif %}
