@@ -1,0 +1,5 @@
+{% assign stamp-instance=site.data.stamp[include.stamp] %}
+{% include stamp/thumbnail/large.html
+    display=include.display
+    stamp=stamp-instance
+%}
