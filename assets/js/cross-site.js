@@ -26,6 +26,10 @@
                 backLinkName: 'SudoTV 剧集主页',
                 backLinkUrl: 'https://series.sudo.tv/',
             },
+            'SudoTV Stamp': {
+                backLinkName: 'SudoTV 贴纸主页',
+                backLinkUrl: 'https://stamp.sudo.tv/',
+            },
         },
         'en-US': {
             'SudoTV': {
@@ -51,6 +55,10 @@
             'SudoTV Series': {
                 backLinkName: 'SudoTV Series Index',
                 backLinkUrl: 'https://series.sudo.tv/',
+            },
+            'SudoTV Stamp': {
+                backLinkName: 'SudoTV Stamp Index',
+                backLinkUrl: 'https://stamp.sudo.tv/',
             },
         },
     };
