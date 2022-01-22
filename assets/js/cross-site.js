@@ -69,12 +69,27 @@
         'en-US': 'Ignore and close cross site banner',
     };
 
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+
+    if (params.origin === siteCommon.applicationName) {
+
+        urlSearchParams.delete('origin');
+
+        if ([...urlSearchParams.entries()].length === 0) {
+
+            window.history.replaceState({}, null, window.location.pathname);
+            return;
+        }
+
+        const tempUrl = `${window.location.pathname}?${urlSearchParams.toString()}`;
+
+        window.history.replaceState({}, null, tempUrl);
+    }
+
     const crossSiteBanner = document.getElementById('cross-site-banner');
     const crossSiteBannerText = document.getElementById('cross-site-banner-text');
     const crossSiteBannerClose = document.getElementById('cross-site-banner-close');
-
-    const urlSearchParams = new URLSearchParams(window.location.search);
-    const params = Object.fromEntries(urlSearchParams.entries());
 
     if (typeof params.origin !== 'string') {
         return;
