@@ -1,0 +1,25 @@
+{% if include.size == "small" %}
+
+{% include stamp/thumbnail/small.html
+    stamp=include.stamp
+%}
+
+{% elsif include.size == "medium" %}
+
+{% include stamp/thumbnail/medium.html
+    stamp=include.stamp
+%}
+
+{% elsif include.size == "large" %}
+
+{% include stamp/thumbnail/large.html
+    stamp=include.stamp
+%}
+
+{% elsif include.size == "full" %}
+
+{% include stamp/thumbnail/full.html
+    stamp=include.stamp
+%}
+
+{% endif %}

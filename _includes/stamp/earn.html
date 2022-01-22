@@ -1,0 +1,60 @@
+{% assign localization=page.localization %}
+
+{% if localization == "en-US" %}
+
+<blockquote>
+    The following stamps are available to earn:
+</blockquote>
+
+{% elsif localization == "zh-CN" %}
+
+<blockquote>
+    您可以获得以下的贴纸：
+</blockquote>
+
+{% endif %}
+
+{% if include.stamp-size %}
+{% assign actual-size=include.stamp-size %}
+{% else %}
+{% assign actual-size="large" %}
+{% endif %}
+
+<ul class="stamp-hi-flex">
+
+    {% if include.stamp0 %}
+    <li>
+        {% include stamp/thumbnail.html
+            size=actual-size
+            stamp=include.stamp0
+        %}
+    </li>
+    {% endif %}
+
+    {% if include.stamp1 %}
+    <li>
+        {% include stamp/thumbnail.html
+            size=actual-size
+            stamp=include.stamp1
+        %}
+    </li>
+    {% endif %}
+
+    {% if include.stamp2 %}
+    <li>
+        {% include stamp/thumbnail.html
+            size=actual-size
+            stamp=include.stamp2
+        %}
+    </li>
+    {% endif %}
+
+    {% if include.stamp3 %}
+    <li>
+        {% include stamp/thumbnail.html
+            size=actual-size
+            stamp=include.stamp3
+        %}
+    </li>
+    {% endif %}
+</ul>
