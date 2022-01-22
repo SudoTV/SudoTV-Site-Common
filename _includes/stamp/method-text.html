@@ -25,6 +25,13 @@
         这个贴纸将会在固定的时间间隔自动添加
         {% endif %}
 
+        {% when 'auto' %}
+        {% if localization == "en-US" %}
+        This stamp will be granted automatically when ready
+        {% elsif localization == "zh-CN" %}
+        这个贴纸会在满足条件时被自动添加
+        {% endif %}
+
         {% when 'email' %}
         {% if localization == "en-US" %}
         Email <a href="mailto://stamp@sudo.tv">stamp@sudo.tv</a> to acquire this stamp
