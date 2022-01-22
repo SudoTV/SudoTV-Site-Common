@@ -2,16 +2,16 @@
 
 Rarity:
 {% case include.rarity %}
-{% when 'well-known' %} Well-known
-{% when 'special' %} Special
+{% when "well-known" %} Well-known
+{% when "special" %} Special
 {% endcase %}
 
 {% elsif page.localization == "zh-CN" %}
 
 {% capture rarity-text %}
 {% case include.rarity %}
-{% when 'well-known' %} 常见
-{% when 'special' %} 特殊
+{% when "well-known" %} 常见
+{% when "special" %} 特殊
 {% endcase %}
 {% endcapture %}
 
