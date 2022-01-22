@@ -3,6 +3,10 @@
 Rarity:
 {% case include.rarity %}
 {% when "well-known" %} Well-known
+{% when "uncommon" %} Uncommon
+{% when "rare" %} Rare
+{% when "dazzle" %} Dazzle
+{% when "sparkling" %} Sparkling
 {% when "special" %} Special
 {% endcase %}
 
@@ -11,6 +15,10 @@ Rarity:
 {% capture rarity-text %}
 {% case include.rarity %}
 {% when "well-known" %} 常见
+{% when "uncommon" %} 少见
+{% when "rare" %} 稀有
+{% when "dazzle" %} 耀眼
+{% when "sparkling" %} 亮闪闪
 {% when "special" %} 特殊
 {% endcase %}
 {% endcapture %}
