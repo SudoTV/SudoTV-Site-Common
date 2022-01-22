@@ -92,6 +92,36 @@
     border-color: #5a5a5a;
 }
 
+.stamp-icon-border-uncommon {
+
+    border-color: #00b980;
+}
+
+.stamp-icon-border-worthy {
+
+    border-color: #006b80;
+}
+
+.stamp-icon-border-rare {
+
+    border-color: #000660;
+}
+
+.stamp-icon-border-dazzle {
+
+    border-color: #c06000;
+}
+
+.stamp-icon-border-sparkling {
+
+    border-color: #e0e000;
+}
+
+.stamp-icon-border-priceless {
+
+    border-color: #aa2200;
+}
+
 .stamp-icon-border-special {
 
     border-color: #4444BB;

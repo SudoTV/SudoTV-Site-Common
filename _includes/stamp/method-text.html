@@ -18,6 +18,13 @@
     <li>
         {% case method %}
 
+        {% when 'regular' %}
+        {% if localization == "en-US" %}
+        This stamp will be granted in a regular time interval
+        {% elsif localization == "zh-CN" %}
+        这个贴纸将会在固定的时间间隔自动添加
+        {% endif %}
+
         {% when 'email' %}
         {% if localization == "en-US" %}
         Email <a href="mailto://stamp@sudo.tv">stamp@sudo.tv</a> to acquire this stamp
