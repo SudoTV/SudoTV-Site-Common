@@ -53,5 +53,16 @@
     border: 0px;
     border-radius: 0px;
     background-color: #4444BB;
+    border-left: 8px solid #4444BB;
+    border-right: 8px solid #4444BB;
     color: #FFFFFF;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.input-full-width-button:hover,
+.input-full-width-button:focus,
+.input-full-width-button:active {
+
+    border-right: 8px solid #9c9ccc;
 }

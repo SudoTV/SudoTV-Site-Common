@@ -1,0 +1,30 @@
+{% assign localization=page.localization %}
+
+{% if localization == "en-US" %}
+
+{% include input/full-width.html
+    id="profile-jump"
+    label="Profile"
+    button-text="Go"
+%}
+
+{% elsif localization == "zh-CN" %}
+
+{% include input/full-width.html
+    id="profile-jump"
+    label="画像"
+    button-text="前往"
+%}
+
+{% endif %}
+
+<script>
+    (() => {
+        const input = document.getElementById('profile-jump-input');
+        const button = document.getElementById('profile-jump-input-button');
+
+        button.addEventListener('click', () => {
+            window.location.href = `../hi/${input.value}`;
+        });
+    })();
+</script>
