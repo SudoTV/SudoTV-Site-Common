@@ -55,6 +55,15 @@
                     </a>
                 </li>
                 <li class="links-footer-li">
+                    <a data-origin="{{ site.application_name }}" href="https://sudo.tv/dogs">
+                        {% if localization == "en-US" %}
+                        Dogs
+                        {% elsif localization == "zh-CN" %}
+                        狗狗
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="links-footer-li">
                     <a data-origin="{{ site.application_name }}" href="https://sudo.tv/frequently-asked-questions">
                         {% if localization == "en-US" %}
                         FAQ
