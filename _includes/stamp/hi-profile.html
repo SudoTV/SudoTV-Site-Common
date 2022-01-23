@@ -37,6 +37,16 @@
 {% endif %}
 
 <ul class="stamp-hi-about-flex">
+
+    {% if include.viewer.about.bilibili %}
+    <li>
+        <i class="fa fa-fw fa-video-camera" aria-hidden="true" title="BiliBili"></i>
+        <a href="https://space.bilibili.com/{{ include.viewer.about.bilibili }}">
+            {{ include.viewer.about.bilibili }}
+        </a>
+    </li>
+    {% endif %}
+
     {% if include.viewer.about.bitbucket %}
     <li>
         <i class="fa fa-fw fa-bitbucket-square" aria-hidden="true" title="BitBucket"></i>
@@ -109,6 +119,15 @@
     </li>
     {% endif %}
 
+    {% if include.viewer.about.youtube %}
+    <li>
+        <i class="fa fa-fw fa-youtube-square" aria-hidden="true" title="Youtube"></i>
+        <a href="https://www.youtube.com/channel/{{ include.viewer.about.youtube }}">
+            {{ include.viewer.about.youtube }}
+        </a>
+    </li>
+    {% endif %}
+
     {% if include.viewer.about.tumblr %}
     <li>
         <i class="fa fa-fw fa-tumblr-square" aria-hidden="true" title="Tumblr"></i>
@@ -135,6 +154,15 @@
         </a>
     </li>
     {% endif %}
+
+    {% if include.viewer.about.weibo %}
+    <li>
+        <i class="fa fa-fw fa-weibo" aria-hidden="true" title="Weibo"></i>
+        <a href="https://weibo.com/{{ include.viewer.about.weibo }}">
+            {{ include.viewer.about.weibo }}
+        </a>
+    </li>
+    {% endif %}
 </ul>
 
 {% if localization == "en-US" %}
@@ -155,7 +183,7 @@
     {% for stamp in include.viewer.stamps %}
     <li>
         {% include stamp/thumbnail/large-text.html
-            stamp=stamp    
+            stamp=stamp.stamp 
         %}
     </li>
     {% endfor %}
