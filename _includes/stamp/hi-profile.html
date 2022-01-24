@@ -188,3 +188,45 @@
     </li>
     {% endfor %}
 </ul>
+
+{% if localization == "en-US" %}
+
+<h2>
+    Learn More
+</h2>
+
+{% include navigation/absolute-link.html
+    href="/create"
+    title="Create your own profile"
+    description="Learn more about how to create your own profile"
+%}
+
+{% include navigation/absolute-link.html
+    external=true
+    with-origin=true
+    href="https://sudo.tv/reprint/profile"
+    title="How to Reprint Viewer Profiles"
+    description="View your right and limitations to reprint SudoTV viewer profiles"
+%}
+
+{% elsif localization == "zh-CN" %}
+
+<h2>
+    欲了解更多
+</h2>
+
+{% include navigation/absolute-link.html
+    href="/create"
+    title="创建您自己的画像"
+    description="查看创建您自己的画像的方式"
+%}
+
+{% include navigation/absolute-link.html
+    external=true
+    with-origin=true
+    href="https://sudo.tv/reprint/profile"
+    title="如何转载观众的画像"
+    description="查看您转载 SudoTV 观众的画像的权利和限制"
+%}
+
+{% endif %}
