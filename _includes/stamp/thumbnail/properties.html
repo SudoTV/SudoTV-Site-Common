@@ -1,0 +1,25 @@
+{%- assign localization=page.localization -%}
+
+{%- capture title-text -%}
+{%- for property in include.properties -%}
+{%- assign propertyKey=property[0] -%}
+
+{%- if localization == "en-US" -%}
+
+{{ include.stamp.properties[propertyKey].localization[localization].label }}: {{ property[1] }}
+
+{%- elsif localization == "zh-CN" -%}
+
+{{ include.stamp.properties[propertyKey].localization[localization].label }}：{{ property[1] }}
+
+{%- endif -%}
+
+{%- if forloop.last == false -%}
+&#013;
+{%- endif -%}
+{%- endfor -%}
+{%- endcapture -%}
+
+<div class="stamp-icon-properties-outer" title="{{ title-text | strip }}">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+</div>

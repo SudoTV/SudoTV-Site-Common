@@ -1,17 +1,35 @@
 {% assign localization=page.localization %}
 
-{% if include.display %}
+{%- if include.display -%}
 
 <div class="stamp-icon-border-inner {{ include.size-class | strip }} {{ include.color-class | strip }}">
     <img src="{{ include.stamp.icon[localization].url }}" alt="{{ include.stamp.localization[localization].label }}">
+
+    {%- if include.properties -%}
+    {%- include stamp/thumbnail/properties.html
+        stamp=include.stamp
+        properties=include.properties    
+    -%}
+    {%- elsif include.stamp.properties -%}
+    {%- include stamp/thumbnail/properties-indicator.html -%}
+    {%- endif -%}
 </div>
 
-{% else %}
+{%- else -%}
 
 <a data-origin="{{ site.application_name }}" href="https://stamp.sudo.tv/stamp/{{ include.stamp.identifier }}"
     class="stamp-icon-border-inner {{ include.size-class | strip }} {{ include.color-class | strip }}"
     title="{{ include.stamp.localization[localization].label | strip }} - {{ include.stamp.localization[localization].description | strip }}">
     <img src="{{ include.stamp.icon[localization].url }}" alt="{{ include.stamp.localization[localization].label }}">
+
+    {%- if include.properties -%}
+    {%- include stamp/thumbnail/properties.html
+        stamp=include.stamp
+        properties=include.properties    
+    -%}
+    {%- elsif include.stamp.properties -%}
+    {%- include stamp/thumbnail/properties-indicator.html -%}
+    {%- endif -%}
 </a>
 
-{% endif %}
+{%- endif -%}
