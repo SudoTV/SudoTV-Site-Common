@@ -183,7 +183,8 @@
     {% for stamp in include.viewer.stamps %}
     <li>
         {% include stamp/thumbnail/large-text.html
-            stamp=stamp.stamp 
+            stamp=stamp.stamp
+            properties=stamp.properties
         %}
     </li>
     {% endfor %}
@@ -196,7 +197,7 @@
 </h2>
 
 {% include navigation/absolute-link.html
-    href="/create"
+    href="/create/profile"
     title="Create your own profile"
     description="Learn more about how to create your own profile"
 %}
@@ -216,7 +217,7 @@
 </h2>
 
 {% include navigation/absolute-link.html
-    href="/create"
+    href="/create/profile"
     title="创建您自己的画像"
     description="查看创建您自己的画像的方式"
 %}
