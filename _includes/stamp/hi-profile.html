@@ -19,7 +19,7 @@
 {% endif %}
 
 <blockquote class="code-large-font">
-    {{ include.viewer.localization[localization].bio }}
+    {{ include.viewer.localization[localization].bio | markdownify | newline_to_br }}
 </blockquote>
 
 {% if localization == "en-US" %}
