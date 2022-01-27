@@ -21,10 +21,48 @@
 
 {% assign fixed-month = text-month | strip %}
 
+{% capture text-day %}
+{% case day %}
+{% when '1' %} 一
+{% when '2' %} 二
+{% when '3' %} 三
+{% when '4' %} 四
+{% when '5' %} 五
+{% when '6' %} 六
+{% when '7' %} 七
+{% when '8' %} 八
+{% when '9' %} 九
+{% when '10' %} 十
+{% when '11' %} 十一
+{% when '12' %} 十二
+{% when '13' %} 十三
+{% when '14' %} 十四
+{% when '15' %} 十五
+{% when '16' %} 十六
+{% when '17' %} 十七
+{% when '18' %} 十八
+{% when '19' %} 十九
+{% when '20' %} 二十
+{% when '21' %} 二十一
+{% when '22' %} 二十二
+{% when '23' %} 二十三
+{% when '24' %} 二十四
+{% when '25' %} 二十五
+{% when '26' %} 二十六
+{% when '27' %} 二十七
+{% when '28' %} 二十八
+{% when '29' %} 二十九
+{% when '30' %} 三十
+{% when '31' %} 三十一
+{% endcase %}
+{% endcapture %}
+
+{% assign fixed-day = text-day | strip %}
+
 {% assign final-text = year 
     | append: "年"
     | append: fixed-month
-    | append: day
+    | append: fixed-day
     | append: "日"
 %}
 
