@@ -15,8 +15,18 @@
 {% include_relative {{ include.file }} %}
 {% endhighlight %}
 
+{% when 'markdown' %}
+{% highlight markdown %}
+{% include_relative {{ include.file }} %}
+{% endhighlight %}
+
 {% when 'php' %}
 {% highlight php %}
+{% include_relative {{ include.file }} %}
+{% endhighlight %}
+
+{% when 'powershell' %}
+{% highlight powershell %}
 {% include_relative {{ include.file }} %}
 {% endhighlight %}
 
@@ -35,13 +45,18 @@
 {% include_relative {{ include.file }} %}
 {% endhighlight %}
 
-{% when 'powershell' %}
-{% highlight powershell %}
+{% when 'typescript' %}
+{% highlight typescript %}
 {% include_relative {{ include.file }} %}
 {% endhighlight %}
 
-{% when 'typescript' %}
-{% highlight typescript %}
+{% when 'yaml' %}
+{% highlight yaml %}
+{% include_relative {{ include.file }} %}
+{% endhighlight %}
+
+{% when 'yml' %}
+{% highlight yml %}
 {% include_relative {{ include.file }} %}
 {% endhighlight %}
 
