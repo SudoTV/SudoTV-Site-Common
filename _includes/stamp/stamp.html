@@ -84,6 +84,48 @@
 {%- if localization == "en-US" -%}
 
 <h2>
+    More about this stamp
+</h2>
+
+{%- elsif localization == "zh-CN" -%}
+
+<h2>
+    关于本贴纸
+</h2>
+
+{%- endif -%}
+
+{%- capture release-date-text -%}
+{%- include localization/date.html
+    date=include.stamp.release-date
+-%}
+{%- endcapture -%}
+
+<ul>
+    {%- if localization == "en-US" -%}
+
+    <li>
+        <strong>Release Date</strong>: {{ release-date-text | strip }}
+    </li>
+    <li>
+        <strong>Copyright</strong>: {{ include.stamp.copyright }}
+    </li>
+
+    {%- elsif localization == "zh-CN" -%}
+
+    <li>
+        <strong>发布时间</strong>：{{ release-date-text | strip }}
+    </li>
+    <li>
+        <strong>版权所有</strong>：{{ include.stamp.copyright }}
+    </li>
+
+    {%- endif -%}
+</ul>
+
+{%- if localization == "en-US" -%}
+
+<h2>
     Umm... Where is it sold then?
 </h2>
 
