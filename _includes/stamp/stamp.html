@@ -108,7 +108,7 @@
         <strong>Release Date</strong>: {{ release-date-text | strip }}
     </li>
     <li>
-        <strong>Copyright</strong>: {{ include.stamp.copyright }}
+        <strong>Icon Design Copyright</strong>: {{ include.stamp.copyright.icon-design }}
     </li>
 
     {%- elsif localization == "zh-CN" -%}
@@ -117,7 +117,7 @@
         <strong>发布时间</strong>：{{ release-date-text | strip }}
     </li>
     <li>
-        <strong>版权所有</strong>：{{ include.stamp.copyright }}
+        <strong>徽标设计版权</strong>：{{ include.stamp.copyright.icon-design }}
     </li>
 
     {%- endif -%}
