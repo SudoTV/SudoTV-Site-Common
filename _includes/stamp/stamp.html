@@ -111,6 +111,19 @@
         <strong>Icon Design Copyright</strong>: {{ include.stamp.copyright.icon-design }}
     </li>
 
+    {% if include.stamp.copyright.materials %}
+
+    {% for material-copyright in include.stamp.copyright.materials %}
+
+    <li>
+        <strong>{{ material-copyright.localization[localization].material }} Copyright</strong>:
+        {{ material-copyright.localization[localization].credit }}
+    </li>
+
+    {% endfor %}
+
+    {% endif %}
+
     {%- elsif localization == "zh-CN" -%}
 
     <li>
@@ -119,6 +132,19 @@
     <li>
         <strong>徽标设计版权</strong>：{{ include.stamp.copyright.icon-design }}
     </li>
+
+    {% if include.stamp.copyright.materials %}
+
+    {% for material-copyright in include.stamp.copyright.materials %}
+
+    <li>
+        <strong>{{ material-copyright.localization[localization].material }}版权</strong>:
+        {{ material-copyright.localization[localization].credit }}
+    </li>
+
+    {% endfor %}
+
+    {% endif %}
 
     {%- endif -%}
 </ul>
