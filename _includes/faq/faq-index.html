@@ -1,0 +1,59 @@
+{% assign localization=page.localization %}
+
+<h1>
+    {{ page.title }}
+</h1>
+
+<h2>
+    {% if localization == "en-US" %}
+
+    Category
+
+    {% elsif localization == "zh-CN" %}
+
+    分类
+
+    {% endif %}
+</h2>
+
+{% for faq in site.data.faq %}
+
+{% assign faqKey=faq[0] %}
+{% assign faqValue=faq[1] %}
+
+{% assign faqLocalization=faqValue.localization[localization] %}
+
+{% include navigation/core-link.html
+    href=faqValue.identifier
+    title=faqLocalization.title
+    description=faqLocalization.description
+%}
+
+{% endfor %}
+
+<h2>
+    {% if localization == "en-US" %}
+
+    Nothing helpful?
+
+    {% elsif localization == "zh-CN" %}
+
+    没有找到想要的？
+
+    {% endif %}
+</h2>
+
+<blockquote>
+    {% if localization == "en-US" %}
+
+    We are continuing to improve our content. If you have any questions not answered here, don't hesitate to get in
+    touch with us via email at <a href="mailto://info@sudo.tv">info@sudo.tv</a>. For more ways to contact us, please
+    visit <a href="https://sudo.tv/contact">Contact</a>.
+
+    {% elsif localization == "zh-CN" %}
+
+    我们始终在改进我们的内容。如果您在这里没有找到答案，请通过电子邮件 <a href="mailto://info@sudo.tv">info@sudo.tv</a> 联系我们。您可以在 <a
+        href="https://sudo.tv/contact">联系</a> 找到更多联系我们的方式。
+
+    {% endif %}
+</blockquote>
