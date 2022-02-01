@@ -19,7 +19,12 @@
 {%- endif -%}
 
 <blockquote class="code-large-font">
-    {{ include.stamp.localization[localization].description }}
+    {{ include.stamp.localization[localization].description
+        | markdownify
+        | remove: '<p>'
+        | remove: '</p>'
+        | newline_to_br
+    }}
 </blockquote>
 
 {%- if localization == "en-US" -%}
@@ -107,6 +112,18 @@
     <li>
         <strong>Release Date</strong>: {{ release-date-text | strip }}
     </li>
+
+    {%- if include.stamp.suspend-date -%}
+    {%- capture suspend-date-text -%}
+    {%- include localization/date.html
+        date=include.stamp.suspend-date
+    -%}
+    {%- endcapture -%}
+    <li>
+        <strong>Suspend Date</strong>: {{ suspend-date-text | strip }}
+    </li>
+    {% endif %}
+
     <li>
         <strong>Icon Design Copyright</strong>: {{ include.stamp.copyright.icon-design }}
     </li>
@@ -129,6 +146,18 @@
     <li>
         <strong>发布时间</strong>：{{ release-date-text | strip }}
     </li>
+
+    {%- if include.stamp.suspend-date -%}
+    {%- capture suspend-date-text -%}
+    {%- include localization/date.html
+        date=include.stamp.suspend-date
+    -%}
+    {%- endcapture -%}
+    <li>
+        <strong>停止获取时间</strong>: {{ suspend-date-text | strip }}
+    </li>
+    {% endif %}
+
     <li>
         <strong>徽标设计版权</strong>：{{ include.stamp.copyright.icon-design }}
     </li>
@@ -164,7 +193,12 @@
 {%- endif -%}
 
 <blockquote class="code-large-font">
-    {{ include.stamp.localization[localization].how-to-get }}
+    {{ include.stamp.localization[localization].how-to-get
+        | markdownify
+        | remove: '<p>'
+        | remove: '</p>'
+        | newline_to_br
+    }}
 </blockquote>
 
 {%- include stamp/method-text.html
