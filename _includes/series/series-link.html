@@ -66,6 +66,10 @@
 {% include series/play-link.html
     episode=latestSeries
 %}
+{% include series/transcript-link.html
+    series=include.series
+    episode-id=include.series.latest-episode
+%}
 
 {% endcapture %}
 
