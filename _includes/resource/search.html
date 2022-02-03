@@ -1,0 +1,188 @@
+{% assign localization=page.localization %}
+
+{% if localization == "en-US" %}
+
+{% include input/full-width.html
+    id="resource-search"
+    label="Search"
+%}
+
+{% elsif localization == "zh-CN" %}
+
+{% include input/full-width.html
+    id="resource-search"
+    label="搜索"
+%}
+
+{% endif %}
+
+<div id="resource-search-results">
+</div>
+
+<script>
+    (() => {
+
+        const searchResults = document.getElementById('resource-search-results');
+
+        const setResults = (results) => {
+
+            if (results.length > 0) {
+
+                searchResults.innerHTML = results.join("");
+                return;
+            }
+
+            if (pageCommon.language === 'en-US') {
+
+                searchResults.innerHTML = "No Result";
+            } else {
+
+                searchResults.innerHTML = "没有结果";
+            }
+        };
+
+        const topicJSON = JSON.parse(`{{ site.data.topic | jsonify }}`);
+        delete topicJSON.docs;
+
+        const availableTopics = [];
+
+        for (const topicKey in topicJSON) {
+
+            const topicMatchers = [
+                topicKey,
+                topicJSON[topicKey].localization[pageCommon.language].name,
+                topicJSON[topicKey].localization[pageCommon.language].description,
+            ];
+
+            if (pageCommon.language !== 'en-US') {
+                topicMatchers.push(topicJSON[topicKey].localization['en-US'].name);
+                topicMatchers.push(topicJSON[topicKey].localization['en-US'].description);
+            }
+
+            availableTopics.push({
+                type: 'topic',
+                value: topicJSON[topicKey],
+                matchers: topicMatchers,
+            });
+
+            for (const articleKey in topicJSON[topicKey].articles) {
+
+                const articleMatchers = [
+                    articleKey,
+                    topicJSON[topicKey].articles[articleKey].localization[pageCommon.language].title,
+                    topicJSON[topicKey].articles[articleKey].localization[pageCommon.language].description,
+                ];
+
+                if (pageCommon.language !== 'en-US') {
+                    articleMatchers.push(topicJSON[topicKey].articles[articleKey].localization['en-US'].title);
+                    articleMatchers.push(topicJSON[topicKey].articles[articleKey].localization['en-US']
+                        .description);
+                }
+
+                availableTopics.push({
+                    type: 'article',
+                    topic: topicJSON[topicKey],
+                    value: topicJSON[topicKey].articles[articleKey],
+                    matchers: articleMatchers,
+                });
+            }
+        }
+
+        const input = document.getElementById('resource-search-input');
+
+        const linkTemplate = `{% include navigation/absolute-link.html
+            pre="@PRE@"
+            href="@HREF@"
+            title="@TITLE@"
+            description="@DESCRIPTION@"
+        %}`;
+
+        input.addEventListener('keyup', (event) => {
+
+            const result = [];
+
+            const value = event.target.value;
+            topics: for (const item of availableTopics) {
+
+                topicMatchers: for (const matcher of item.matchers) {
+
+                    if (matcher.toLowerCase().includes(value)) {
+
+                        result.push(item);
+
+                        if (result.length >= 10) {
+                            break topics;
+                        }
+                        break;
+                    }
+                }
+            }
+
+            const resultLinks = result.map((item) => {
+
+                let preTitle = "";
+                let target = "";
+                let title = "";
+
+                if (item.type === 'article') {
+                    target = `../topic/${item.topic.path}/${item.value.path}`;
+                    title = item.value.localization[pageCommon.language].title;
+                } else if (item.type === 'topic') {
+                    target = `../topic/${item.value.path}`;
+                    title = item.value.localization[pageCommon.language].name;
+                }
+
+                if (pageCommon.language === 'zh-CN') {
+
+                    if (item.type === 'article') {
+                        preTitle =
+                            `文章 - 有关 ${item.topic.localization[pageCommon.language].name} 主题`;
+                    } else if (item.type === 'topic') {
+                        preTitle = '主题';
+                    }
+
+                    return linkTemplate
+                        .replace(/@PRE@/g, preTitle)
+                        .replace(/@HREF@/g, target)
+                        .replace(/@TITLE@/g, title)
+                        .replace(/@DESCRIPTION@/g, item.value.localization[pageCommon.language]
+                            .description);
+                } else if (pageCommon.language === 'en-US') {
+
+                    if (item.type === 'article') {
+                        preTitle = `Article - ${item.topic.localization['en-US'].name} Topic`;
+                    } else if (item.type === 'topic') {
+                        preTitle = 'Topic';
+                    }
+
+                    return linkTemplate
+                        .replace(/@PRE@/g, preTitle)
+                        .replace(/@HREF@/g, target)
+                        .replace(/@TITLE@/g, title)
+                        .replace(/@DESCRIPTION@/g, item.value.localization[pageCommon.language]
+                            .description);
+                }
+                return 'ERROR';
+            });
+
+            if (resultLinks.length >= 10) {
+
+
+                if (pageCommon.language === 'en-US') {
+
+                    resultLinks.push(
+                        '<blockquote>Only displaying maximum 10 results<br>Use a more precise query for better results</blockquote>'
+                    );
+                } else {
+
+                    resultLinks.push('<blockquote>只显示最多10条结果<br>使用更精确的查询来获得更好的结果</blockquote>');
+                }
+
+            }
+
+            setResults(resultLinks);
+        });
+
+        setResults([]);
+    })();
+</script>
