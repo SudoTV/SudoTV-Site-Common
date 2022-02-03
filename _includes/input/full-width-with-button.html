@@ -1,0 +1,48 @@
+<div class="input-full-width-outer">
+    <div id="{{ include.id }}-input-label" class="input-full-width-label">
+        {{ include.label }}
+    </div>
+    <div class="input-full-width-body">
+        <input id="{{ include.id }}-input" class="input-full-width-input" type="text">
+        <button id="{{ include.id }}-input-button" class="input-full-width-button">
+            {{ include.button-text }}
+        </button>
+    </div>
+</div>
+
+<script>
+    (() => {
+        const input = document.getElementById('{{ include.id }}-input');
+        const label = document.getElementById('{{ include.id }}-input-label');
+        const button = document.getElementById('{{ include.id }}-input-button');
+
+        window.addEventListener("pageshow", () => {
+            input.value = '';
+        });
+
+        const updateInputLabelStatus = (value) => {
+
+            if (value.length > 0) {
+                label.classList.add('input-full-width-label-editing');
+            } else {
+                label.classList.remove('input-full-width-label-editing');
+            }
+        };
+
+        const updateInputLabelStatusEvent = (event) => {
+
+            updateInputLabelStatus(event.target.value);
+        };
+
+        input.addEventListener('keyup', updateInputLabelStatusEvent);
+        input.addEventListener('change', updateInputLabelStatusEvent);
+
+        input.addEventListener('keydown', (event) => {
+
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                button.click();
+            }
+        });
+    })();
+</script>
