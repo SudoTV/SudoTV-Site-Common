@@ -34,6 +34,7 @@
 
 .input-full-width-input {
 
+    height: 32px;
     flex: 1;
     outline: none;
     padding-left: 8px;
