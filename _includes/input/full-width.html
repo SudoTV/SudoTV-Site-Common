@@ -4,9 +4,6 @@
     </div>
     <div class="input-full-width-body">
         <input id="{{ include.id }}-input" class="input-full-width-input" type="text">
-        <button id="{{ include.id }}-input-button" class="input-full-width-button">
-            {{ include.button-text }}
-        </button>
     </div>
 </div>
 
@@ -14,7 +11,6 @@
     (() => {
         const input = document.getElementById('{{ include.id }}-input');
         const label = document.getElementById('{{ include.id }}-input-label');
-        const button = document.getElementById('{{ include.id }}-input-button');
 
         window.addEventListener("pageshow", () => {
             input.value = '';
@@ -36,13 +32,5 @@
 
         input.addEventListener('keyup', updateInputLabelStatusEvent);
         input.addEventListener('change', updateInputLabelStatusEvent);
-
-        input.addEventListener('keydown', (event) => {
-
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                button.click();
-            }
-        });
     })();
 </script>
