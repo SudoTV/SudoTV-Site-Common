@@ -32,14 +32,21 @@
 <h2>
     About Me
 </h2>
+<p>
+    <strong>Identifier</strong>: <code>{{ include.viewer.viewer | strip }}</code>
+</p>
 
 {% elsif localization == "zh-CN" %}
 
 <h2>
     关于我
 </h2>
+<p>
+    <strong>识别码</strong>：<code>{{ include.viewer.viewer | strip }}</code>
+</p>
 
 {% endif %}
+
 
 <ul class="stamp-hi-about-flex">
 
@@ -189,6 +196,7 @@
     <li>
         {% include stamp/thumbnail/large-text.html
             stamp=stamp.stamp
+            is-profile=true
             properties=stamp.properties
         %}
     </li>
