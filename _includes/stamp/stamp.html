@@ -110,6 +110,9 @@
     {%- if localization == "en-US" -%}
 
     <li>
+        <strong>Identifier</strong>: <code>{{ include.stamp.identifier | strip }}</code>
+    </li>
+    <li>
         <strong>Release Date</strong>: {{ release-date-text | strip }}
     </li>
 
@@ -143,6 +146,9 @@
 
     {%- elsif localization == "zh-CN" -%}
 
+    <li>
+        <strong>识别码</strong>：<code>{{ include.stamp.identifier | strip }}</code>
+    </li>
     <li>
         <strong>发布时间</strong>：{{ release-date-text | strip }}
     </li>
