@@ -11,7 +11,13 @@
         properties=include.properties    
     -%}
     {%- elsif include.stamp.properties -%}
+
+    {%- if include.is-profile -%}
+    {%- include stamp/thumbnail/properties-indicator-not-found.html -%}
+    {%- else -%}
     {%- include stamp/thumbnail/properties-indicator.html -%}
+    {%- endif -%}
+
     {%- endif -%}
 </div>
 
@@ -28,7 +34,13 @@
         properties=include.properties    
     -%}
     {%- elsif include.stamp.properties -%}
+
+    {%- if include.is-profile -%}
+    {%- include stamp/thumbnail/properties-indicator-not-found.html -%}
+    {%- else -%}
     {%- include stamp/thumbnail/properties-indicator.html -%}
+    {%- endif -%}
+
     {%- endif -%}
 </a>
 
