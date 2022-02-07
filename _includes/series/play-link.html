@@ -5,12 +5,14 @@
     video=include.video
 %}
 {% endcapture %}
+{%- assign video-url=video-url | strip -%}
 
 {% capture video-url-text %}
 {% include series/video-link-text.html
     video=include.video
 %}
 {% endcapture %}
+{%- assign video-url-text=video-url-text | strip -%}
 
 {% if localization == "en-US" %}
 

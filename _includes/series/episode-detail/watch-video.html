@@ -1,39 +1,68 @@
-{% if page.localization == "en-US" %}
+{%- if page.localization == "en-US" -%}
 
 <h2>
     Watch Video
 </h2>
 
-{% elsif page.localization == "zh-CN" %}
+{%- elsif page.localization == "zh-CN" -%}
 
 <h2>
     观看视频
 </h2>
 
-{% endif %}
+{%- endif -%}
 
-{% assign videos=include.series.episodes[include.episode-id].videos[page.localization] %}
+{%- assign videos=include.series.episodes[include.episode-id].videos[page.localization] -%}
 
-{% assign video-size=videos | size %}
+{%- assign video-size=videos | size -%}
 
-{% if video-size <= 0 %}
+{%- if video-size <= 0 -%}
 
-{% if page.localization == "en-US" %}
+{%- if page.localization == "en-US" -%}
 
 <p>Current No Video Available</p>
 
-{% elsif page.localization == "zh-CN" %}
+{%- elsif page.localization == "zh-CN" -%}
 
 <p>暂无视频</p>
 
-{% endif %}
+{%- endif -%}
 
-{% else %}
+{%- else -%}
 
-{% for video in videos %}
+{%- for video in videos -%}
 
-{{ video }}
+{%- capture video-url -%}
+{%- include series/video-link.html
+    video=video
+-%}
+{%- endcapture -%}
+{%- assign video-url=video-url | strip -%}
 
-{% endfor %}
+{%- capture video-url-text -%}
+{%- include series/video-link-text.html
+    video=video
+-%}
+{%- endcapture -%}
+{%- assign video-url-text=video-url-text | strip -%}
 
-{% endif %}
+{%- if page.localization == "en-US" -%}
+
+{%- assign video-description="Video URL: " | append: video-url -%}
+
+{%- elsif page.localization == "zh-CN" -%}
+
+{%- assign video-description="视频地址：" | append: video-url -%}
+
+{%- endif -%}
+
+{%- include navigation/absolute-link.html
+    external=true
+    href=video-url
+    title=video-url-text
+    description=video-description
+-%}
+
+{%- endfor -%}
+
+{%- endif -%}
