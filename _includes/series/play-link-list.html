@@ -26,4 +26,30 @@
 
 {% else %}
 
+{% assign first-video=videos[0] %}
+
+{% include series/play-link.html
+    video=first-video
+%}
+
+{% assign rest-video-size=video-size | minus: 1 %}
+
+{% if localization == "en-US" %}
+
+{% if rest-video-size == 1 %}
+
+<em>and Other 1 Video Source</em>
+
+{% else %}
+
+<em>and Other {{ rest-video-size }} Video Sources</em>
+
+{% endif %}
+
+{% elsif localization == "zh-CN" %}
+
+<em>以及 {{ rest-video-size }} 个视频源</em>
+
+{% endif %}
+
 {% endif %}
