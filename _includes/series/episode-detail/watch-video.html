@@ -1,0 +1,39 @@
+{% if page.localization == "en-US" %}
+
+<h2>
+    Watch Video
+</h2>
+
+{% elsif page.localization == "zh-CN" %}
+
+<h2>
+    观看视频
+</h2>
+
+{% endif %}
+
+{% assign videos=include.series.episodes[include.episode-id].videos[page.localization] %}
+
+{% assign video-size=videos | size %}
+
+{% if video-size <= 0 %}
+
+{% if page.localization == "en-US" %}
+
+<p>Current No Video Available</p>
+
+{% elsif page.localization == "zh-CN" %}
+
+<p>暂无视频</p>
+
+{% endif %}
+
+{% else %}
+
+{% for video in videos %}
+
+{{ video }}
+
+{% endfor %}
+
+{% endif %}
