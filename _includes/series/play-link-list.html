@@ -1,0 +1,29 @@
+{% assign localization=page.localization %}
+
+{% assign videos=include.series.episodes[include.episode-id].videos[localization] %}
+
+{% assign video-size=videos | size %}
+
+{% if video-size <= 0 %}
+
+{% if localization == "en-US" %}
+
+<i class="fa fa-info fa-fw" aria-hidden="true"></i>Current No Video Available
+
+{% elsif localization == "zh-CN" %}
+
+<i class="fa fa-info fa-fw" aria-hidden="true"></i>暂无视频
+
+{% endif %}
+
+{% elsif video-size == 1 %}
+
+{% assign first-video=videos[0] %}
+
+{% include series/play-link.html
+    video=first-video
+%}
+
+{% else %}
+
+{% endif %}

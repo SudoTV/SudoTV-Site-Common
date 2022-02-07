@@ -1,0 +1,7 @@
+{% assign platform = include.video.platform %}
+
+{{}}
+
+{% case platform %}
+{% when 'bilibili' %} https://www.bilibili.com/video/{{ include.video.identifier }}
+{% endcase %}

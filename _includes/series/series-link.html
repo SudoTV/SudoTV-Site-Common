@@ -62,11 +62,11 @@
 
 {% capture play-link %}
 
-{% assign latestSeries=include.series.episodes[include.series.latest-episode] %}
-{% include series/play-link.html
-    episode=latestSeries
-%}
 {% include series/transcript-link.html
+    series=include.series
+    episode-id=include.series.latest-episode
+%}
+{% include series/play-link-list.html
     series=include.series
     episode-id=include.series.latest-episode
 %}

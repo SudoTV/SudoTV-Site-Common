@@ -1,43 +1,27 @@
-{% if page.localization == "en-US" %}
-
 {% assign localization=page.localization %}
 
-<a class="episode-link-extra-link" href="{{ include.episode.video-url[localization].url }}">
-    <i class="fa fa-play fa-fw" aria-hidden="true"></i>Play Video
+{% capture video-url %}
+{% include series/video-link.html
+    video=include.video
+%}
+{% endcapture %}
+
+{% capture video-url-text %}
+{% include series/video-link-text.html
+    video=include.video
+%}
+{% endcapture %}
+
+{% if localization == "en-US" %}
+
+<a class="episode-link-extra-link" href="{{ video-url }}">
+    <i class="fa fa-play fa-fw" aria-hidden="true"></i>{{ video-url-text }}
 </a>
 
-{% if include.episode.video-url[localization].actual-language %}
+{% elsif localization == "zh-CN" %}
 
-{% if include.episode.video-url[localization].actual-language == "en-US" %}
-
-in English (US)
-
-{% elsif include.episode.video-url[localization].actual-language == "zh-CN" %}
-
-in Simplified Chinese
-
-{% endif %}
-
-{% endif %}
-
-{% elsif page.localization == "zh-CN" %}
-
-<a class="episode-link-extra-link" href="{{ include.episode.video-url[localization].url }}">
-    <i class="fa fa-play fa-fw" aria-hidden="true"></i>播放视频
+<a class="episode-link-extra-link" href="{{ video-url }}">
+    <i class="fa fa-play fa-fw" aria-hidden="true"></i>{{ video-url-text }}
 </a>
-
-{% if include.episode.video-url[localization].actual-language %}
-
-{% if include.episode.video-url[localization].actual-language == "en-US" %}
-
-【英文 (美国)】
-
-{% elsif include.episode.video-url[localization].actual-language == "zh-CN" %}
-
-【简体中文】
-
-{% endif %}
-
-{% endif %}
 
 {% endif %}

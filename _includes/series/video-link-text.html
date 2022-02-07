@@ -1,0 +1,44 @@
+{% assign platform = include.video.platform %}
+{% assign actual-language = include.video.actual-language %}
+
+{% if localization == "en-US" %}
+
+{% case platform %}
+{% when 'bilibili' %} Watch on BiliBili
+{% endcase %}
+
+{% if actual-language %}
+
+{% if actual-language == "en-US" %}
+
+in English (US)
+
+{% elsif actual-language == "zh-CN" %}
+
+in Simplified Chinese
+
+{% endif %}
+
+{% endif %}
+
+{% elsif localization == "zh-CN" %}
+
+{% case platform %}
+{% when 'bilibili' %} 在 BiliBili 上观看
+{% endcase %}
+
+{% if actual-language %}
+
+{% if actual-language == "en-US" %}
+
+【英文 (美国)】
+
+{% elsif actual-language == "zh-CN" %}
+
+【简体中文】
+
+{% endif %}
+
+{% endif %}
+
+{% endif %}
