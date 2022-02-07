@@ -50,11 +50,11 @@ Updated -
 
 {% capture extra %}
 
-{% include series/play-link.html
-    episode=episode
-%}
-
 {% include series/transcript-link.html
+    series=include.series
+    episode-id=include.series.latest-episode
+%}
+{% include series/play-link-list.html
     series=include.series
     episode-id=include.series.latest-episode
 %}

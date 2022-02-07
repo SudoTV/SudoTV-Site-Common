@@ -46,11 +46,11 @@
 
     {% capture extra %}
 
-    {% include series/play-link.html
-        episode=episodeValue
-    %}
-
     {% include series/transcript-link.html
+        series=include.series
+        episode-id=episodeKey
+    %}
+    {% include series/play-link-list.html
         series=include.series
         episode-id=episodeKey
     %}
