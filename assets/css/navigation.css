@@ -10,6 +10,17 @@
     min-width: 180px;
 }
 
+.navigation-core-link-outer-not-available {
+
+    border: 2px solid #4444BB;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    min-width: 180px;
+}
+
 .navigation-core-link-outer:hover .navigation-core-link-inner-icon {
 
     color: #4444BB;
@@ -22,6 +33,14 @@
 }
 
 .navigation-core-link-inner-icon {
+
+    font-size: 20px;
+    width: auto;
+    padding: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation-core-link-inner-icon-not-available {
 
     font-size: 20px;
     width: auto;

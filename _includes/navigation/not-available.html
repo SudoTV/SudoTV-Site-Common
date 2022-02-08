@@ -1,0 +1,43 @@
+<div class="navigation-core-link-outer-not-available">
+    <div class="navigation-core-link-inner-text">
+
+        {% if include.pre %}
+
+        <div class="navigation-core-link-description">
+            {{ include.pre }}
+        </div>
+
+        {% endif %}
+
+        <div class="navigation-core-link-title">
+            {{ include.title }}
+        </div>
+
+        {% if include.description %}
+
+        <div class="navigation-core-link-description">
+            {{ include.description }}
+        </div>
+
+        {% endif %}
+
+        {% if include.extra %}
+
+        <div class="navigation-core-link-description">
+            {{ include.extra }}
+        </div>
+
+        {% endif %}
+
+        {% if include.second-extra %}
+
+        <div class="navigation-core-link-description">
+            {{ include.second-extra }}
+        </div>
+
+        {% endif %}
+    </div>
+    <div class="navigation-core-link-inner-icon-not-available">
+        <i class="fa fa-times fa-fw" aria-hidden="true"></i>
+    </div>
+</div>
