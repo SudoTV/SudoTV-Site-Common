@@ -20,11 +20,17 @@
 
 {%- if page.localization == "en-US" -%}
 
-<p>Current No Video Available</p>
+{%- include navigation/not-available.html
+    title="Video Currently Not Available"
+    description="A Video Source is Currently Not Available for This Episode"
+-%}
 
 {%- elsif page.localization == "zh-CN" -%}
 
-<p>暂无视频</p>
+{%- include navigation/not-available.html
+    title="暂无视频"
+    description="本集暂无可用视频源"
+-%}
 
 {%- endif -%}
 
