@@ -210,3 +210,57 @@
 {%- include stamp/method-text.html
     methods=include.stamp.methods
 %}
+
+{% if localization == "en-US" %}
+
+<h2>
+    Learn More
+</h2>
+
+{% include navigation/absolute-link.html
+    href="/stamps"
+    title="Stamps List"
+    description="Browse the list of stamps"
+%}
+
+{% include navigation/absolute-link.html
+    href="/create/stamp"
+    title="Create Stamp"
+    description="View how to create stamps"
+%}
+
+{% include navigation/absolute-link.html
+    external=true
+    with-origin=true
+    href="https://sudo.tv/reprint/stamp"
+    title="How to Reprint Stamps"
+    description="View your right and limitations to reprint SudoTV stamps"
+%}
+
+{% elsif localization == "zh-CN" %}
+
+<h2>
+    欲了解更多
+</h2>
+
+{% include navigation/absolute-link.html
+    href="/stamps"
+    title="贴纸列表"
+    description="浏览贴纸列表"
+%}
+
+{% include navigation/absolute-link.html
+    href="/create/stamp"
+    title="创建贴纸"
+    description="查看创建贴纸的方式"
+%}
+
+{% include navigation/absolute-link.html
+    external=true
+    with-origin=true
+    href="https://sudo.tv/reprint/stamp"
+    title="如何转载贴纸"
+    description="查看您转载 SudoTV 贴纸的权利和限制"
+%}
+
+{% endif %}
